@@ -1,4 +1,4 @@
-# crockeradam.com — personal portfolio
+# crockerjadam.com — personal portfolio
 
 Static portfolio site for Adam Crocker.
 
@@ -8,12 +8,15 @@ Static portfolio site for Adam Crocker.
 
 ```
 .
-├── index.html         single-page portfolio
+├── index.html              single-page portfolio
 ├── assets/
 │   ├── styles.css
 │   ├── main.js
-│   └── favicon.svg
-├── amplify.yml        Amplify build spec
+│   ├── favicon.svg
+│   ├── portrait.{jpg,webp}        720px headshot
+│   ├── portrait@2x.{jpg,webp}     1440px retina headshot
+│   └── Adam_Crocker_Resume.pdf    linked from nav + hero + contact
+├── amplify.yml             Amplify build spec (static, no build step)
 └── README.md
 ```
 
@@ -26,11 +29,11 @@ python3 -m http.server 5173
 
 ## Deploy
 
-Connected to AWS Amplify via GitHub. Every push to `main` triggers a build.
-Custom domain `crockeradam.com` is served via Route 53 + Amplify.
+Connected to AWS Amplify via GitHub (`captcrock/Portfolio`). Every push to `main` triggers a build.
+Custom domain `crockerjadam.com` is served via Route 53 + Amplify.
 
 ## Notes
 
-- Fonts: Fraunces + JetBrains Mono (Google Fonts)
-- Theme color: warm dark editorial (#0c0a09 / #d4a574)
+- Fonts: Space Grotesk + Instrument Serif + JetBrains Mono (Google Fonts)
+- Theme: midnight + electric cyan/violet gradient
 - No tracking, no analytics, no cookies
