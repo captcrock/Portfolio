@@ -80,16 +80,19 @@
         <aside class="hero-side">
           <div class="portrait">
             <div class="portrait-inner">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <defs>
-                  <linearGradient id="ph-grad" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stop-color="#00d9ff" stop-opacity="0.20"/>
-                    <stop offset="100%" stop-color="#a855f7" stop-opacity="0.20"/>
-                  </linearGradient>
-                </defs>
-                <rect width="200" height="200" fill="url(#ph-grad)"/>
-                <text x="100" y="120" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="92" fill="#f4eee0" opacity="0.92">A<tspan dx="-4" fill="#00d9ff">C</tspan></text>
-              </svg>
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="/assets/portrait.webp 1x, /assets/portrait@2x.webp 2x" />
+                <img
+                  src="/assets/portrait.jpg"
+                  srcset="/assets/portrait.jpg 1x, /assets/portrait@2x.jpg 2x"
+                  alt="Adam Crocker, smiling, in a navy suit"
+                  width="720"
+                  height="720"
+                  loading="eager"
+                  decoding="async" />
+              </picture>
             </div>
             <div class="portrait-frame" aria-hidden="true"></div>
             <div class="portrait-badge mono">
@@ -221,14 +224,14 @@
                 <span class="wc-org mono">Delta Air Lines</span>
               </div>
               <h3 class="wc-title">Reporting Modernization &mdash; SCRD / ESR / MPR v2</h3>
-              <p class="wc-desc">Moved Delta&apos;s Scorecard, ESR, and MPR reporting off PPTX + HTML monoliths onto a v2 stack &mdash; JSON data packages in S3, a single vanilla-JS viewer with sparklines and YoY / MoM drill-downs, AI narratives from AWS Bedrock (Claude Haiku 4.5), and a per-KPI explanation API. SCRD scale: ~2,300 grp_combs per closeout. DynamoDB AI cache with TTL, Bedrock IAM, Step Functions parallel v2 branch running alongside the legacy pipeline. Phases 0&ndash;3 shipped; validation suite and cutover next.</p>
+              <p class="wc-desc">Architected and shipped a JSON-first v2 replacement for three legacy operational scorecards (SCRD, ESR, MPR) at Delta &mdash; SCRD alone processing ~2,300 organizational entities per monthly close. Python packagers run against Teradata, wired into a Step Functions parallel branch with DynamoDB caching and an S3-backed registry; renderer collapsed from per-report PPTX/HTML templates to a single vanilla-JS viewer (Chart.js, CSS custom properties, no build pipeline). AWS Bedrock (Claude Haiku 4.5) generates auto-narratives and per-KPI explanations served via <code class="mono">/api/v1/kpi-explain</code> on API Gateway + Lambda, with schema validation, source-data grounding, and content-keyed DynamoDB caching. Closed seven latent defects in the legacy code en route &mdash; including an <code class="mono">eval()</code>-based templating injection and swapped year/month columns. Delivered phases 0&ndash;3 inside a restrictive <code class="mono">delegate-admin-</code> IAM boundary plus a Lambda-creation SCP, deploying AI compute as a Glue Python-shell job to ship without an architecture exception.</p>
               <div class="wc-stats">
-                <div><span class="wc-n mono">3</span><span class="wc-ll">report types modernized</span></div>
-                <div><span class="wc-n mono">~2.3k</span><span class="wc-ll">grp_combs / closeout</span></div>
-                <div><span class="wc-n mono">v2</span><span class="wc-ll">parallel-running</span></div>
+                <div><span class="wc-n mono">~2.3k</span><span class="wc-ll">entities / closeout</span></div>
+                <div><span class="wc-n mono">7</span><span class="wc-ll">legacy defects closed</span></div>
+                <div><span class="wc-n mono">13</span><span class="wc-ll">engineering docs · phases 0&ndash;3</span></div>
               </div>
               <div class="chips">
-                <span>AWS Bedrock</span><span>Claude Haiku 4.5</span><span>DynamoDB</span><span>Step Functions</span><span>Glue (Python)</span><span>Lambda</span><span>S3</span><span>Chart.js</span>
+                <span>AWS Bedrock</span><span>Claude Haiku 4.5</span><span>Step Functions</span><span>DynamoDB</span><span>Glue (Python shell)</span><span>Lambda</span><span>API Gateway</span><span>S3</span><span>Teradata</span><span>Chart.js</span>
               </div>
             </article>
 
