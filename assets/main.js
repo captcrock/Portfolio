@@ -16,6 +16,19 @@
 
   /* --- Prompt → response template map --- */
   var routes = [
+    /* Polite deflection for questions about working multiple jobs / employment overlap.
+       Must come first so its keywords beat 'delta', 'dgo', 'tst', etc. */
+    { keys: ['two jobs', '2 jobs', 'three jobs', '3 jobs', 'multiple jobs',
+             'both jobs', 'both employers', 'both companies',
+             'two roles', 'three roles', 'multiple roles', 'three positions',
+             'two positions', 'multiple positions',
+             'moonlight', 'side gig', 'second job',
+             'at the same time', 'simultaneously', 'work both', 'balance both',
+             'juggle', 'how do you have time', "how do you find time",
+             'delta and diversified', 'delta and dgo', 'delta and tst',
+             'diversified and delta', 'dgo and delta', 'tst and delta',
+             'work for both', 'work for all', 'work all three', 'work at both'],
+      threadKey: null, userMsg: 'Do you work multiple jobs?', tpl: 't-private' },
     { keys: ['intro', 'who', 'about', 'yourself', 'tell me about you'],
       threadKey: 'intro', userMsg: 'Who are you?', tpl: 't-intro' },
     { keys: ['ship', 'shipped', 'built', 'projects', 'portfolio', 'selected work', 'work'],
