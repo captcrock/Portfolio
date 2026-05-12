@@ -1,43 +1,234 @@
-// adam crocker — portfolio js
+/* =========================================================
+   Chat portfolio — Crocker / AI
+   ========================================================= */
 (function () {
   'use strict';
 
-  // system time in CT — pulses live in the sysline
-  function tick() {
-    const el = document.getElementById('sys-time');
-    if (!el) return;
-    const now = new Date();
-    const opts = {
-      hour: '2-digit', minute: '2-digit', second: '2-digit',
-      hour12: false, timeZone: 'America/Chicago'
-    };
-    el.textContent = now.toLocaleTimeString('en-US', opts) + ' CT';
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  var thread = $('#chat-thread');
+  var form = $('#chat-form');
+  var input = $('#chat-text');
+  var suggestions = $('#chat-suggestions');
+  var sidebar = $('#sidebar');
+  var sbList = $('#sb-list');
+
+  /* --- Prompt → response template map --- */
+  var routes = [
+    { keys: ['intro', 'who', 'about', 'yourself', 'tell me about you'],
+      threadKey: 'intro', userMsg: 'Who are you?', tpl: 't-intro' },
+    { keys: ['ship', 'shipped', 'built', 'projects', 'portfolio', 'selected work', 'work'],
+      threadKey: 'work', userMsg: 'What have you shipped?', tpl: 't-work' },
+    { keys: ['other three', 'more projects', 'rest of', 'remaining'],
+      threadKey: null, userMsg: 'Show me the other three projects', tpl: 't-work-more' },
+    { keys: ['delta', 'odsr', 'airlines', 'enablement'],
+      threadKey: 'delta', userMsg: 'Tell me about your Delta work', tpl: 't-delta' },
+    { keys: ['scrd', 'scorecard'],
+      threadKey: null, userMsg: 'What is SCRD?', tpl: 't-scrd' },
+    { keys: ['eval', 'injection', 'defect', 'bug'],
+      threadKey: null, userMsg: 'Tell me about the eval() injection', tpl: 't-eval' },
+    { keys: ['dgo', 'diversified', 'gas', 'oil', 'historian', 'timescale', 'industrial'],
+      threadKey: 'dgo', userMsg: 'Diversified Gas & Oil deep-dive', tpl: 't-dgo' },
+    { keys: ['tst', 'that simple tech', 'agency', 'agent', 'consultancy'],
+      threadKey: 'tst', userMsg: 'That Simple Tech — the agency thing', tpl: 't-tst' },
+    { keys: ['stack', 'tech', 'tools', 'capabilities', 'languages', 'aws', 'work with'],
+      threadKey: 'stack', userMsg: "What's your stack?", tpl: 't-stack' },
+    { keys: ['contact', 'reach', 'hire', 'email', 'phone', 'linkedin', 'github', 'résumé', 'resume'],
+      threadKey: 'contact', userMsg: 'How do I reach you?', tpl: 't-contact' }
+  ];
+
+  var threadKeyToRoute = {};
+  routes.forEach(function (r) { if (r.threadKey) threadKeyToRoute[r.threadKey] = r; });
+
+  /* Initial suggestions */
+  var initialSuggestions = [
+    'What have you shipped?',
+    'Tell me about your Delta work',
+    "What's your stack?",
+    'How do I reach you?'
+  ];
+
+  function renderSuggestions(items) {
+    suggestions.innerHTML = '';
+    items.forEach(function (text) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sg';
+      b.textContent = text;
+      b.addEventListener('click', function () { submitPrompt(text); });
+      suggestions.appendChild(b);
+    });
   }
-  tick();
-  setInterval(tick, 1000);
 
-  // footer year
-  const yr = document.getElementById('yr');
-  if (yr) yr.textContent = new Date().getFullYear();
+  /* --- Message rendering --- */
 
-  // cursor-follow spotlight (skipped if user prefers reduced motion or on touch)
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isTouch = matchMedia('(hover: none)').matches;
-  if (!reduced && !isTouch) {
-    const spot = document.querySelector('.spotlight');
-    if (spot) {
-      let raf = null;
-      let tx = 50, ty = 0;
-      window.addEventListener('pointermove', (e) => {
-        tx = (e.clientX / window.innerWidth) * 100;
-        ty = (e.clientY / window.innerHeight) * 100;
-        if (raf) return;
-        raf = requestAnimationFrame(() => {
-          spot.style.setProperty('--mx', tx + '%');
-          spot.style.setProperty('--my', ty + '%');
-          raf = null;
-        });
-      }, { passive: true });
+  function addUserMessage(text) {
+    var row = document.createElement('div');
+    row.className = 'msg-row is-user';
+    row.innerHTML =
+      '<div class="msg-avatar">YOU</div>' +
+      '<div class="msg-body">' +
+        '<div class="msg-name">You</div>' +
+        '<div class="msg-content"><p></p></div>' +
+      '</div>';
+    row.querySelector('.msg-content p').textContent = text;
+    thread.appendChild(row);
+    scrollToBottom();
+  }
+
+  function addAiPlaceholder() {
+    var row = document.createElement('div');
+    row.className = 'msg-row is-ai';
+    row.innerHTML =
+      '<div class="msg-avatar"><img src="/assets/portrait.webp" alt="" /></div>' +
+      '<div class="msg-body">' +
+        '<div class="msg-name">Adam (AI)</div>' +
+        '<div class="msg-content"><div class="typing"><span></span><span></span><span></span></div></div>' +
+      '</div>';
+    thread.appendChild(row);
+    scrollToBottom();
+    return row;
+  }
+
+  function fillAiContent(row, templateId) {
+    var tpl = document.getElementById(templateId);
+    if (!tpl) return;
+    var content = row.querySelector('.msg-content');
+    content.innerHTML = '';
+    // Clone all child nodes from template
+    var frag = tpl.content.cloneNode(true);
+    content.appendChild(frag);
+    wireChips(content);
+    scrollToBottom();
+  }
+
+  function wireChips(scope) {
+    $$('button.chip, button.inline-chip', scope).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var p = btn.getAttribute('data-prompt');
+        if (p) submitPrompt(p);
+      });
+    });
+  }
+
+  function scrollToBottom() {
+    requestAnimationFrame(function () {
+      thread.scrollTop = thread.scrollHeight;
+    });
+  }
+
+  /* --- Submission flow --- */
+
+  function findRoute(text) {
+    var t = text.toLowerCase();
+    for (var i = 0; i < routes.length; i++) {
+      var r = routes[i];
+      for (var j = 0; j < r.keys.length; j++) {
+        if (t.indexOf(r.keys[j]) !== -1) return r;
+      }
     }
+    return null;
   }
+
+  function submitPrompt(text) {
+    addUserMessage(text);
+    var route = findRoute(text);
+    var placeholder = addAiPlaceholder();
+    var delay = 700 + Math.random() * 500;
+    setTimeout(function () {
+      fillAiContent(placeholder, route ? route.tpl : 't-fallback');
+      // After first interaction, swap suggestions
+      renderSuggestions(rotateSuggestions(text));
+    }, delay);
+  }
+
+  function rotateSuggestions(lastPrompt) {
+    // Keep suggestions fresh / varied based on context
+    var pool = [
+      'What have you shipped?',
+      'Tell me about your Delta work',
+      "What's your stack?",
+      'How do I reach you?',
+      'Diversified Gas & Oil deep-dive',
+      'That Simple Tech — the agency thing',
+      'What is SCRD?',
+      'Show me the other three projects'
+    ];
+    var lower = lastPrompt.toLowerCase();
+    return pool.filter(function (p) {
+      return p.toLowerCase() !== lower;
+    }).slice(0, 4);
+  }
+
+  /* --- Sidebar nav: load preset thread --- */
+  function loadThread(key) {
+    // Clear thread, set active sidebar item, replay the canned exchange
+    thread.innerHTML = '';
+    $$('.sb-item', sbList).forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-thread') === key);
+    });
+    var route = threadKeyToRoute[key];
+    if (!route) { initialState(); return; }
+    addUserMessage(route.userMsg);
+    var ph = addAiPlaceholder();
+    setTimeout(function () {
+      fillAiContent(ph, route.tpl);
+      renderSuggestions(rotateSuggestions(route.userMsg));
+    }, 500);
+    closeSidebarMobile();
+  }
+
+  function initialState() {
+    thread.innerHTML = '';
+    var ph = addAiPlaceholder();
+    setTimeout(function () {
+      fillAiContent(ph, 't-intro');
+      renderSuggestions(initialSuggestions);
+    }, 450);
+  }
+
+  /* --- Sidebar interactions --- */
+  $$('.sb-item', sbList).forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = btn.getAttribute('data-thread');
+      loadThread(key);
+    });
+  });
+
+  $('[data-new-chat]').addEventListener('click', function () {
+    $$('.sb-item', sbList).forEach(function (b) { b.classList.remove('is-active'); });
+    $$('.sb-item', sbList)[0].classList.add('is-active');
+    initialState();
+    closeSidebarMobile();
+  });
+
+  /* --- Mobile sidebar toggle --- */
+  var overlay = document.createElement('div');
+  overlay.className = 'sb-overlay';
+  document.body.appendChild(overlay);
+
+  function openSidebarMobile() {
+    sidebar.classList.add('is-open');
+    overlay.classList.add('is-on');
+  }
+  function closeSidebarMobile() {
+    sidebar.classList.remove('is-open');
+    overlay.classList.remove('is-on');
+  }
+  $('#chat-menu').addEventListener('click', openSidebarMobile);
+  $('#sb-toggle').addEventListener('click', closeSidebarMobile);
+  overlay.addEventListener('click', closeSidebarMobile);
+
+  /* --- Form submit --- */
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    submitPrompt(text);
+  });
+
+  /* --- Boot --- */
+  initialState();
 })();
