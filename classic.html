@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <title>Adam Crocker — AI Cloud Engineer</title>
+    <meta name="description" content="Adam Crocker — AI Cloud Engineer, AWS Solutions Architect Professional. Delta Air Lines · Diversified Gas & Oil · That Simple Tech." />
+    <meta name="theme-color" content="#1a1916" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://crockerjadam.com/classic.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --bg:        #1a1916;
+        --bg-2:      #221f1c;
+        --surface:   #2a2724;
+        --surface-2: #34302c;
+        --ink:       #ede9dd;
+        --ink-2:     #c8c3b5;
+        --mute:      #8a8579;
+        --mute-2:    #5a564d;
+        --hairline:  rgba(237, 233, 221, 0.08);
+        --hairline-2: rgba(237, 233, 221, 0.16);
+        --accent:    #e8856b;
+        --accent-2:  #f4b88e;
+        --accent-faint: rgba(232, 133, 107, 0.12);
+        --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        --serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+        --mono: 'JetBrains Mono', ui-monospace, monospace;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        font-family: var(--sans);
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      a { color: inherit; text-decoration: none; }
+      ::selection { background: var(--accent-faint); color: var(--accent-2); }
+
+      /* ===== Top bar ===== */
+      .topbar {
+        position: sticky; top: 0; z-index: 50;
+        background: rgba(26, 25, 22, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--hairline);
+      }
+      .topbar-inner {
+        max-width: 1080px; margin: 0 auto;
+        padding: 14px 24px;
+        display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      }
+      .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: -0.01em; }
+      .brand-dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px var(--accent-faint);
+      }
+      .brand-name { font-size: 15px; }
+      .brand-name em { font-family: var(--serif); font-style: italic; color: var(--ink-2); font-weight: 400; }
+      .back-pill {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 7px 12px 7px 10px;
+        border: 1px solid var(--hairline-2);
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--ink-2);
+        transition: all 0.15s ease;
+      }
+      .back-pill:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-faint); }
+      .back-pill svg { stroke: currentColor; }
+
+      /* ===== Sections ===== */
+      section { padding: 80px 24px; }
+      .wrap { max-width: 1080px; margin: 0 auto; }
+
+      .label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 24px;
+        display: flex; align-items: center; gap: 12px;
+      }
+      .label::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+
+      /* ===== Hero ===== */
+      .hero { padding-top: 64px; padding-bottom: 56px; }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 240px;
+        gap: 64px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-family: var(--sans);
+        font-weight: 600;
+        font-size: clamp(38px, 6vw, 64px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        margin: 0 0 18px;
+      }
+      .hero h1 em { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--accent); }
+      .hero-role {
+        font-size: 17px;
+        color: var(--ink-2);
+        margin: 0 0 26px;
+        max-width: 540px;
+      }
+      .hero-meta {
+        display: flex; flex-wrap: wrap; gap: 8px;
+        margin-top: 8px;
+      }
+      .hero-meta span {
+        font-family: var(--mono); font-size: 11px;
+        padding: 5px 10px;
+        border: 1px solid var(--hairline-2);
+        border-radius: 999px;
+        color: var(--ink-2);
+        letter-spacing: 0.02em;
+      }
+      .portrait-wrap {
+        position: relative; aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid var(--hairline-2);
+        box-shadow: 0 24px 60px -20px rgba(0,0,0,0.6);
+      }
+      .portrait-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .portrait-wrap::after {
+        content: '';
+        position: absolute; inset: 0;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1px rgba(232, 133, 107, 0.18);
+      }
+
+      /* ===== Now (three roles) ===== */
+      .now-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .now-card {
+        padding: 24px;
+        background: var(--bg-2);
+        border: 1px solid var(--hairline);
+        border-radius: 12px;
+        transition: border-color 0.2s ease;
+      }
+      .now-card:hover { border-color: var(--hairline-2); }
+      .now-org { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+      .now-role { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+      .now-desc { font-size: 14px; color: var(--ink-2); margin: 0; line-height: 1.6; }
+      .now-when { font-family: var(--mono); font-size: 11px; color: var(--mute); margin-top: 14px; }
+
+      /* ===== Work cards ===== */
+      .work-list { display: flex; flex-direction: column; gap: 16px; }
+      .card {
+        padding: 28px;
+        background: var(--bg-2);
+        border: 1px solid var(--hairline);
+        border-radius: 14px;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+      .card:hover { border-color: var(--accent); }
+      .card-head {
+        display: flex; justify-content: space-between; align-items: center;
+        margin-bottom: 14px; gap: 12px;
+      }
+      .card-tag {
+        font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding: 4px 10px; background: var(--accent-faint);
+        border-radius: 4px;
+      }
+      .card-org { font-family: var(--mono); font-size: 11px; color: var(--mute); text-transform: uppercase; letter-spacing: 0.08em; }
+      .card-title {
+        font-size: 22px; font-weight: 600; letter-spacing: -0.015em;
+        margin: 0 0 12px;
+      }
+      .card-desc { color: var(--ink-2); font-size: 15px; line-height: 1.7; margin: 0 0 16px; }
+      .card-desc code {
+        font-family: var(--mono); font-size: 13px;
+        background: var(--surface); padding: 1px 6px; border-radius: 4px; color: var(--accent-2);
+      }
+      .card-meta {
+        font-family: var(--mono); font-size: 12px;
+        color: var(--mute);
+        padding-top: 14px;
+        border-top: 1px solid var(--hairline);
+      }
+
+      /* ===== Stack ===== */
+      .stack-grid {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+      }
+      .stack-box {
+        padding: 22px;
+        background: var(--bg-2);
+        border: 1px solid var(--hairline);
+        border-radius: 12px;
+      }
+      .stack-h {
+        font-family: var(--mono); font-size: 11px;
+        letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+      .stack-body { font-size: 14px; color: var(--ink-2); line-height: 1.7; }
+
+      /* ===== Contact ===== */
+      .contact-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;
+      }
+      .contact-pill {
+        display: flex; flex-direction: column;
+        padding: 18px 20px;
+        background: var(--bg-2);
+        border: 1px solid var(--hairline);
+        border-radius: 10px;
+        transition: all 0.15s ease;
+      }
+      .contact-pill:hover {
+        border-color: var(--accent);
+        background: var(--accent-faint);
+        transform: translateY(-1px);
+      }
+      .cp-k {
+        font-family: var(--mono); font-size: 11px;
+        letter-spacing: 0.12em; text-transform: uppercase;
+        color: var(--mute); margin-bottom: 6px;
+      }
+      .cp-v { font-size: 15px; color: var(--ink); }
+      .contact-loc {
+        margin-top: 28px; font-size: 14px; color: var(--mute);
+        font-family: var(--mono);
+      }
+
+      /* ===== Section H2 ===== */
+      .sec-h2 {
+        font-family: var(--sans); font-weight: 500;
+        font-size: clamp(28px, 4vw, 40px);
+        letter-spacing: -0.02em;
+        margin: 0 0 14px;
+      }
+      .sec-h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+      .sec-lede { font-size: 16px; color: var(--ink-2); margin: 0 0 36px; max-width: 620px; }
+
+      /* ===== Footer ===== */
+      footer {
+        padding: 32px 24px 48px;
+        border-top: 1px solid var(--hairline);
+        margin-top: 40px;
+      }
+      .foot-inner {
+        max-width: 1080px; margin: 0 auto;
+        display: flex; justify-content: space-between; align-items: center; gap: 16px;
+        font-family: var(--mono); font-size: 12px; color: var(--mute);
+        flex-wrap: wrap;
+      }
+      .foot-link { color: var(--accent); }
+      .foot-link:hover { color: var(--accent-2); }
+
+      /* ===== Mobile ===== */
+      @media (max-width: 820px) {
+        section { padding: 56px 20px; }
+        .hero { padding-top: 40px; padding-bottom: 32px; }
+        .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+        .portrait-wrap { max-width: 180px; margin: 0; }
+        .now-grid { grid-template-columns: 1fr; }
+        .stack-grid { grid-template-columns: 1fr; }
+        .topbar-inner { padding: 12px 18px; }
+        .card { padding: 22px; }
+        .card-head { flex-direction: column; align-items: flex-start; gap: 6px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== Top bar ===== -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="/classic.html" class="brand">
+          <span class="brand-dot"></span>
+          <span class="brand-name">Adam Crocker <em>· AI Cloud Engineer</em></span>
+        </a>
+        <a href="/" class="back-pill" title="Open the conversational version">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Talk to me instead</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1>I build <em>AI-native</em> systems for businesses of every size.</h1>
+            <p class="hero-role">Fortune 500 down to mom-and-pop shops — same person, same care. AWS Solutions Architect — Professional. Based in Springville, Alabama; remote anywhere.</p>
+            <div class="hero-meta">
+              <span>SAP-Pro · Jan 2025</span>
+              <span>Delta Air Lines</span>
+              <span>Diversified Gas &amp; Oil</span>
+              <span>That Simple Tech</span>
+            </div>
+          </div>
+          <div>
+            <div class="portrait-wrap">
+              <picture>
+                <source srcset="/assets/portrait@2x.webp 2x, /assets/portrait.webp" type="image/webp" />
+                <img src="/assets/portrait@2x.jpg" alt="Adam Crocker" loading="eager" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Now ===== -->
+    <section style="padding-top: 40px;">
+      <div class="wrap">
+        <div class="label">Now</div>
+        <h2 class="sec-h2">Three concurrent roles, <em>one operator</em>.</h2>
+        <div class="now-grid">
+          <div class="now-card">
+            <div class="now-org">Delta Air Lines</div>
+            <div class="now-role">Data Engineer → AI Enablement</div>
+            <p class="now-desc">ODSR team since 2023; selected for the AI Enablement Team starting June 2026 — agent standards across Operations Planning &amp; Performance.</p>
+            <div class="now-when">2021 — present</div>
+          </div>
+          <div class="now-card">
+            <div class="now-org">Diversified Gas &amp; Oil</div>
+            <div class="now-role">Systems Engineer</div>
+            <p class="now-desc">Lead engineer on the Corporate Historian OT platform, the Historian ML system, and the offline-first Field App. Concurrent with Delta.</p>
+            <div class="now-when">Aug 2025 — present</div>
+          </div>
+          <div class="now-card">
+            <div class="now-org">That Simple Tech</div>
+            <div class="now-role">Founder &amp; Operator</div>
+            <p class="now-desc">AI-native consultancy. Headline product: a 10-agent autonomous agency platform handling the full client lifecycle across eight project types.</p>
+            <div class="now-when">2024 — present</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Selected Work ===== -->
+    <section>
+      <div class="wrap">
+        <div class="label">Selected work</div>
+        <h2 class="sec-h2">Six pieces, <em>all production</em>.</h2>
+        <p class="sec-lede">Different shapes — a data platform, an ML system, an agent platform, a reporting modernization, a SOX-aligned pipeline, and a cross-platform mobile app — but each one running today against real load.</p>
+
+        <div class="work-list">
+          <article class="card">
+            <div class="card-head">
+              <span class="card-tag">Data platform</span>
+              <span class="card-org">Diversified Gas &amp; Oil</span>
+            </div>
+            <h3 class="card-title">Corporate Historian — OT Data Platform</h3>
+            <p class="card-desc">Lead engineer on the central operational data warehouse. TimescaleDB with 15 schemas, 77 tables, 114 PL/pgSQL functions, 1.6M+ daily production records. Star schema, hypertables, continuous aggregates. ETL from CygNet SCADA, Snowflake, MNR; outbound to Grafana and regulatory reporting. Embedded pgai for automated issue detection over operator free-text and semantic search across historical observations.</p>
+            <div class="card-meta">1.6M+ records/day · 114 PL/pgSQL functions · 15/77 schemas/tables</div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <span class="card-tag">AI systems</span>
+              <span class="card-org">That Simple Tech</span>
+            </div>
+            <h3 class="card-title">Autonomous AI Agency Platform</h3>
+            <p class="card-desc">10-agent system handling the full client lifecycle — intake, sales, scoping, build, QA, deploy, support, billing, comms, phone — across 8 project types. MiniMax M2.7 primary; Gemini 3 Flash Preview for visual QA. Voice via Pipecat + Telnyx + Deepgram Nova; agents execute inside Cua sandboxes. SvelteKit client portal on Vercel.</p>
+            <div class="card-meta">10 specialized agents · 8 project types · ~15× cost reduction target</div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <span class="card-tag">AI at scale</span>
+              <span class="card-org">Delta Air Lines</span>
+            </div>
+            <h3 class="card-title">Reporting Modernization — SCRD / ESR / MPR v2</h3>
+            <p class="card-desc">JSON-first replacement for three legacy scorecards (~2,300 entities/closeout). Python packagers on Teradata, Step Functions parallel branch, DynamoDB caching, single vanilla-JS viewer. AWS Bedrock (Claude Haiku 4.5) for auto-narratives + per-KPI explanations via <code>/api/v1/kpi-explain</code>. Closed seven latent defects en route, including an <code>eval()</code>-based templating injection.</p>
+            <div class="card-meta">~2,300 entities/closeout · 7 defects closed · 13 engineering docs</div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <span class="card-tag">ML platform</span>
+              <span class="card-org">Diversified Gas &amp; Oil</span>
+            </div>
+            <h3 class="card-title">Historian ML — Industrial Anomaly Detection</h3>
+            <p class="card-desc">ML platform over 186M+ telemetry observations. 8 categories of industrial sensor failure. Isolation Forest for unsupervised anomaly detection, Random Forest for pattern classification, LSTM for sensor-level forecasting. Packaged as an AWS CDK stack with a 580-line handoff runbook.</p>
+            <div class="card-meta">186M+ observations · 8 failure categories · 3 model architectures</div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <span class="card-tag">DevOps</span>
+              <span class="card-org">Diversified Gas &amp; Oil</span>
+            </div>
+            <h3 class="card-title">Hybrid DB Migration CI/CD</h3>
+            <p class="card-desc">5-stage Azure DevOps pipeline on a self-hosted Windows agent. SQL risk classifier (BLOCKED / HIGH / MEDIUM / LOW) over ~30 regex patterns. DROP TABLE foreign-key safeguard. Transactional execution with auto-rollback. SOX-aligned audit logging.</p>
+            <div class="card-meta">5 stages · ~30 risk patterns · SOX-aligned</div>
+          </article>
+
+          <article class="card">
+            <div class="card-head">
+              <span class="card-tag">Mobile</span>
+              <span class="card-org">Diversified Gas &amp; Oil</span>
+            </div>
+            <h3 class="card-title">Field App — Offline-First Tank Inspections</h3>
+            <p class="card-desc">Ionic 8 + Angular 20 + Capacitor. Single codebase → iOS, Android, installable PWA. Offline-first on Dexie / IndexedDB with a write-queue and conflict-resolving sync. AWS AppSync + DynamoDB; Cognito federated to Azure AD via MSAL.</p>
+            <div class="card-meta">3 targets, 1 codebase · offline-first · enterprise SSO</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stack ===== -->
+    <section>
+      <div class="wrap">
+        <div class="label">Stack</div>
+        <h2 class="sec-h2">Six buckets, <em>sixty-plus tools</em>.</h2>
+        <p class="sec-lede">The full working surface. Heaviest in AI/ML, AWS, and Postgres-family data engineering — but production work in mobile, voice, and DevOps too.</p>
+
+        <div class="stack-grid">
+          <div class="stack-box">
+            <div class="stack-h">AI / ML</div>
+            <div class="stack-body">Agent design &amp; orchestration · MCP · Claude API · OpenAI API · OpenRouter · AWS Bedrock (Anthropic, OpenAI, Titan, Cohere, Voyage) · pgai · RAG · vector embeddings · vLLM · Ollama · Qwen 3.6 Plus / 3.5-Omni / 3 Coder · MiniMax M2.7 · DeepSeek-R1 · Gemma · BGE-M3 · F5-TTS · Isolation Forest · Random Forest · LSTM · Pipecat · Deepgram · Cua</div>
+          </div>
+          <div class="stack-box">
+            <div class="stack-h">AWS</div>
+            <div class="stack-body">Lambda · Step Functions · EventBridge · SageMaker · Bedrock · Comprehend · Amplify · AppSync · Cognito · API Gateway · S3 · DynamoDB · Redshift · Glue · Kinesis · OpenSearch Serverless · Fargate (incl. Spot) · ECR · CDK (Py + TS) · CloudFormation · Secrets Manager · IAM · STS · KMS</div>
+          </div>
+          <div class="stack-box">
+            <div class="stack-h">Data &amp; ETL</div>
+            <div class="stack-body">TimescaleDB · hypertables · continuous aggregates · PostgreSQL 14+ · PL/pgSQL · Teradata · Snowflake · Redshift · pgvector · pgai · JSONB · star-schema · effective-dated dimensions · AWS Glue · Python ETL · Kinesis · CygNet SCADA · MNR</div>
+          </div>
+          <div class="stack-box">
+            <div class="stack-h">App Stack</div>
+            <div class="stack-body">FastAPI · Node.js · GraphQL (AppSync) · SQLAlchemy 2.0 · Pydantic · Alembic · SvelteKit 2 / Svelte 5 · React · Angular 20 · Ionic 8 · Capacitor · PWA · Tailwind · Three.js · Threlte · GSAP · Dexie / IndexedDB</div>
+          </div>
+          <div class="stack-box">
+            <div class="stack-h">DevOps</div>
+            <div class="stack-body">Azure DevOps Pipelines · GitLab CI/CD · GitHub Actions · AWS CDK · CloudFormation · Docker · Docker Compose · self-hosted build agents · pattern-based SQL risk classification · SOX-aligned audit logging · Tailscale · Caddy · Grafana / Prometheus</div>
+          </div>
+          <div class="stack-box">
+            <div class="stack-h">Languages &amp; Identity</div>
+            <div class="stack-body">Python · TypeScript · JavaScript · SQL (Teradata · PostgreSQL · Snowflake) · PL/pgSQL · Bash · PowerShell · HTML · CSS · Microsoft Entra ID / Azure AD · MSAL · AWS Cognito · PingFederate SSO · Stripe · Telnyx · GA4 · GSC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="label">Contact</div>
+        <h2 class="sec-h2">Easiest paths <em>in</em>.</h2>
+        <p class="sec-lede">Email is fastest. LinkedIn is fine. If you want to skip the formal channel entirely, text the number.</p>
+
+        <div class="contact-grid">
+          <a class="contact-pill" href="mailto:crocker.j.adam@gmail.com">
+            <span class="cp-k">Email</span>
+            <span class="cp-v">crocker.j.adam@gmail.com</span>
+          </a>
+          <a class="contact-pill" href="tel:+12052761071">
+            <span class="cp-k">Phone</span>
+            <span class="cp-v">(205) 276-1071</span>
+          </a>
+          <a class="contact-pill" href="https://linkedin.com/in/adam-crocker1" target="_blank" rel="noopener">
+            <span class="cp-k">LinkedIn</span>
+            <span class="cp-v">adam-crocker1 ↗</span>
+          </a>
+          <a class="contact-pill" href="https://github.com/captcrock" target="_blank" rel="noopener">
+            <span class="cp-k">GitHub</span>
+            <span class="cp-v">captcrock ↗</span>
+          </a>
+          <a class="contact-pill" href="/assets/Adam_Crocker_Resume.pdf" download="Adam_Crocker_Resume.pdf">
+            <span class="cp-k">Résumé</span>
+            <span class="cp-v">Adam_Crocker_Resume.pdf ↓</span>
+          </a>
+        </div>
+
+        <div class="contact-loc">Springville · Alabama · US · CT time zone · remote anywhere.</div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <div class="foot-inner">
+        <div>© 2026 Adam Crocker · crockerjadam.com</div>
+        <div><a href="/" class="foot-link">Conversational view →</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
