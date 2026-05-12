@@ -4,431 +4,286 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
-    <title>Adam Crocker — AI Cloud Engineer · AWS Solutions Architect</title>
-    <meta name="description" content="Adam Crocker — AI Cloud Engineer and AWS Solutions Architect — Professional. I build AI-native systems for businesses of every size, from Delta Air Lines to mom-and-pop shops." />
-    <meta name="theme-color" content="#0a0a14" />
+    <title>crockerOS — Adam Crocker, AI Cloud Engineer</title>
+    <meta name="description" content="Adam Crocker's portfolio rendered as an operating system. Open apps, run terminal commands, browse files." />
+    <meta name="theme-color" content="#0a0d12" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href="https://crockerjadam.com/" />
-    <meta property="og:title" content="Adam Crocker — AI Cloud Engineer" />
-    <meta property="og:description" content="AWS Solutions Architect — Professional. Building production AI systems for businesses of every size — Fortune 500 to mom-and-pop." />
-    <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://crockerjadam.com/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
   <body>
-    <div class="spotlight" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
-
-    <div class="sysline" role="status" aria-live="polite">
-      <span class="pulse" aria-hidden="true"></span>
-      <span class="sl-l">ONLINE</span>
-      <span class="sl-sep" aria-hidden="true">·</span>
-      <span class="sl-l">SPRINGVILLE · AL</span>
-      <span class="sl-sep" aria-hidden="true">·</span>
-      <span class="sl-l">AWS SAP-PRO</span>
-      <span class="sl-sep" aria-hidden="true">·</span>
-      <span class="sl-l" id="sys-time">--:--:-- CT</span>
+    <!-- ===== BOOT SCREEN ===== -->
+    <div class="boot" id="boot">
+      <div class="boot-logo">
+        <div class="boot-mark"></div>
+        <div class="boot-name">crockerOS</div>
+      </div>
+      <div class="boot-bar"><div class="boot-fill"></div></div>
+      <div class="boot-status" id="boot-status">Initializing kernel…</div>
     </div>
 
-    <nav class="nav">
-      <a class="brand" href="#top" aria-label="Adam Crocker — Home">
-        <span class="mono">AC</span>
-        <span class="brand-name">Adam Crocker</span>
-      </a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="/assets/Adam_Crocker_Resume.pdf" download="Adam_Crocker_Resume.pdf">
-          <span>Résumé</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
-      </div>
-    </nav>
-
-    <header class="hero" id="top">
-      <div class="hero-grid">
-        <div class="hero-main">
-          <div class="kicker mono">
-            <span class="dot" aria-hidden="true"></span>
-            AI&nbsp;CLOUD&nbsp;ENGINEER · AWS&nbsp;SAP-PRO
-          </div>
-          <h1 class="display">
-            Adam<br />
-            <span class="display-accent">Crocker.</span>
-          </h1>
-          <p class="lede">
-            I build <strong>AI-native systems</strong> for big and small businesses alike &mdash; from <span class="hl">Delta Air Lines</span> to <span class="hl">mom-and-pop shops</span>. Experience at every size.
-          </p>
-          <div class="cta-row">
-            <a class="cta primary" href="/assets/Adam_Crocker_Resume.pdf" download="Adam_Crocker_Resume.pdf">
-              <span>Download Résumé</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </a>
-            <a class="cta ghost" href="#work">
-              <span>See Selected Work</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
+    <!-- ===== DESKTOP ===== -->
+    <div class="desktop" id="desktop">
+      <!-- menubar -->
+      <div class="menubar">
+        <div class="mb-left">
+          <span class="mb-apple"></span>
+          <span class="mb-app">crockerOS</span>
+          <span class="mb-menu">File</span>
+          <span class="mb-menu">Edit</span>
+          <span class="mb-menu">View</span>
+          <span class="mb-menu">Window</span>
+          <span class="mb-menu">Help</span>
         </div>
+        <div class="mb-right">
+          <span class="mb-stat" title="Status: AVAILABLE">● online</span>
+          <span class="mb-stat">CT</span>
+          <span class="mb-stat" id="mb-clock">--:--</span>
+          <span class="mb-stat" id="mb-date">---</span>
+        </div>
+      </div>
 
-        <aside class="hero-side">
-          <div class="portrait">
-            <div class="portrait-inner">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcset="/assets/portrait.webp 1x, /assets/portrait@2x.webp 2x" />
-                <img
-                  src="/assets/portrait.jpg"
-                  srcset="/assets/portrait.jpg 1x, /assets/portrait@2x.jpg 2x"
-                  alt="Adam Crocker, smiling, in a navy suit"
-                  width="720"
-                  height="720"
-                  loading="eager"
-                  decoding="async" />
-              </picture>
-            </div>
-            <div class="portrait-frame" aria-hidden="true"></div>
-            <div class="portrait-badge mono">
-              <span class="pulse" aria-hidden="true"></span>
-              <span>v.2026</span>
-            </div>
+      <!-- desktop icons -->
+      <div class="dt-icons">
+        <button class="dt-icon" data-open="finder">
+          <div class="dt-icon-img dt-i-finder"></div>
+          <div class="dt-icon-label">projects</div>
+        </button>
+        <button class="dt-icon" data-open="about">
+          <div class="dt-icon-img dt-i-about"></div>
+          <div class="dt-icon-label">about.md</div>
+        </button>
+        <button class="dt-icon" data-open="terminal">
+          <div class="dt-icon-img dt-i-terminal"></div>
+          <div class="dt-icon-label">Terminal</div>
+        </button>
+        <button class="dt-icon" data-open="resume">
+          <div class="dt-icon-img dt-i-resume"></div>
+          <div class="dt-icon-label">resume.pdf</div>
+        </button>
+      </div>
+
+      <!-- windows mount point -->
+      <div class="windows" id="windows"></div>
+
+      <!-- dock -->
+      <div class="dock">
+        <button class="dock-app" data-open="terminal" title="Terminal">
+          <div class="dock-img dt-i-terminal"></div>
+        </button>
+        <button class="dock-app" data-open="finder" title="Finder — projects">
+          <div class="dock-img dt-i-finder"></div>
+        </button>
+        <button class="dock-app" data-open="about" title="About Me">
+          <div class="dock-img dt-i-about"></div>
+        </button>
+        <button class="dock-app" data-open="stack" title="System — Stack">
+          <div class="dock-img dt-i-stack"></div>
+        </button>
+        <button class="dock-app" data-open="photos" title="Photos">
+          <div class="dock-img dt-i-photos"></div>
+        </button>
+        <button class="dock-app" data-open="mail" title="Mail">
+          <div class="dock-img dt-i-mail"></div>
+        </button>
+        <button class="dock-app" data-open="resume" title="Résumé.pdf">
+          <div class="dock-img dt-i-resume"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== APP TEMPLATES (cloned by JS) ===== -->
+
+    <template id="app-terminal">
+      <div class="term">
+        <div class="term-tabs">
+          <div class="term-tab is-active">adam@crockerOS — bash</div>
+        </div>
+        <div class="term-body" data-term-body>
+          <div class="term-line"><span class="term-ps">adam@crockerOS</span> <span class="term-cwd">~</span> <span class="term-mark">%</span> <span class="term-cmd term-auto">whoami</span></div>
+          <div class="term-out">Adam Crocker · AI Cloud Engineer · AWS Solutions Architect — Professional</div>
+          <div class="term-out term-mute">Type <code>help</code> for available commands.</div>
+        </div>
+        <form class="term-input" data-term-input>
+          <span class="term-ps">adam@crockerOS</span>
+          <span class="term-cwd">~</span>
+          <span class="term-mark">%</span>
+          <input type="text" autofocus autocomplete="off" spellcheck="false" />
+        </form>
+      </div>
+    </template>
+
+    <template id="app-finder">
+      <div class="finder">
+        <aside class="fnd-sidebar">
+          <div class="fnd-sec-label">Favorites</div>
+          <button class="fnd-item is-active" data-folder="projects">
+            <span class="fnd-icon">📁</span> projects
+          </button>
+          <button class="fnd-item" data-folder="documents">
+            <span class="fnd-icon">📁</span> documents
+          </button>
+          <div class="fnd-sec-label">Mounted</div>
+          <div class="fnd-item static">
+            <span class="fnd-icon">💾</span> aws://949220898418
+          </div>
+          <div class="fnd-item static">
+            <span class="fnd-icon">🌐</span> crockerjadam.com
           </div>
         </aside>
-      </div>
-
-      <div class="ticker" aria-hidden="true">
-        <div class="ticker-track">
-          <span>AWS</span><span>·</span><span>Bedrock</span><span>·</span><span>Claude Haiku 4.5</span><span>·</span><span>MiniMax M2.7</span><span>·</span><span>Gemini 3 Flash</span><span>·</span><span>OpenRouter</span><span>·</span><span>SageMaker</span><span>·</span><span>Lambda</span><span>·</span><span>Step Functions</span><span>·</span><span>CDK</span><span>·</span><span>TimescaleDB</span><span>·</span><span>PostgreSQL</span><span>·</span><span>pgai</span><span>·</span><span>Teradata</span><span>·</span><span>Snowflake</span><span>·</span><span>Python</span><span>·</span><span>TypeScript</span><span>·</span><span>FastAPI</span><span>·</span><span>SvelteKit</span><span>·</span><span>React</span><span>·</span><span>Ionic</span><span>·</span><span>MCP</span><span>·</span><span>vLLM</span><span>·</span><span>Qwen</span><span>·</span><span>Pipecat</span><span>·</span><span>Deepgram Nova</span><span>·</span><span>Telnyx</span><span>·</span><span>Cua</span><span>·</span><span>Stripe</span><span>·</span>
-          <span>AWS</span><span>·</span><span>Bedrock</span><span>·</span><span>Claude Haiku 4.5</span><span>·</span><span>MiniMax M2.7</span><span>·</span><span>Gemini 3 Flash</span><span>·</span><span>OpenRouter</span><span>·</span><span>SageMaker</span><span>·</span><span>Lambda</span><span>·</span><span>Step Functions</span><span>·</span><span>CDK</span><span>·</span><span>TimescaleDB</span><span>·</span><span>PostgreSQL</span><span>·</span><span>pgai</span><span>·</span><span>Teradata</span><span>·</span><span>Snowflake</span><span>·</span><span>Python</span><span>·</span><span>TypeScript</span><span>·</span><span>FastAPI</span><span>·</span><span>SvelteKit</span><span>·</span><span>React</span><span>·</span><span>Ionic</span><span>·</span><span>MCP</span><span>·</span><span>vLLM</span><span>·</span><span>Qwen</span><span>·</span><span>Pipecat</span><span>·</span><span>Deepgram Nova</span><span>·</span><span>Telnyx</span><span>·</span><span>Cua</span><span>·</span><span>Stripe</span><span>·</span>
+        <div class="fnd-main">
+          <div class="fnd-toolbar">
+            <span class="fnd-path">projects /</span>
+            <span class="fnd-count">6 items</span>
+          </div>
+          <div class="fnd-grid" data-fnd-grid></div>
         </div>
       </div>
-    </header>
+    </template>
 
-    <main>
-      <section class="about" id="about">
-        <div class="container">
-          <div class="about-grid">
-            <div>
-              <div class="kicker mono"><span class="dot"></span>SUMMARY</div>
-              <p class="about-copy">
-                I'm an AWS Solutions Architect &mdash; Professional and full-stack engineer building AI-native systems for businesses of every size &mdash; from Fortune 500s to mom-and-pop shops. I went from a bootcamp graduate to a production data engineer at a Fortune 500 in under two years, and now lead engineering on industrial data platforms and AI agent architectures.
-              </p>
-              <p class="about-copy">
-                I'm currently shipping <strong>Diversified Gas &amp; Oil's OT data platform</strong>, the <strong>Historian ML pipeline</strong> over 186M+ telemetry observations, and a <strong>field-operations mobile app</strong> for tank inspections &mdash; and I was just selected for <strong>Delta's AI Enablement team</strong>, starting June 2026, to develop AI agent standards across Operations Planning &amp; Performance.
-              </p>
-            </div>
-            <div class="about-stats">
-              <div class="stat">
-                <div class="stat-n mono">SAP</div>
-                <div class="stat-l">AWS Certified<br/>Solutions Architect<br/>Professional</div>
-              </div>
-              <div class="stat">
-                <div class="stat-n mono">5 yrs</div>
-                <div class="stat-l">Production<br/>engineering across<br/>F500 and small business</div>
-              </div>
-              <div class="stat">
-                <div class="stat-n mono">1.6M+</div>
-                <div class="stat-l">Daily records<br/>flowing through<br/>systems I own</div>
-              </div>
-            </div>
-          </div>
+    <template id="app-about">
+      <div class="doc">
+        <div class="doc-head">
+          <span class="doc-tab is-active">about.md</span>
         </div>
-      </section>
+        <div class="doc-body">
+          <h1># Adam Crocker</h1>
+          <p class="doc-sub">AI Cloud Engineer · AWS Solutions Architect — Professional</p>
+          <p>I build <em>AI-native systems for businesses of every size</em>. Fortune 500 down to mom-and-pop shops. Same person, same care.</p>
 
-      <section class="work" id="work">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker mono"><span class="dot"></span>SELECTED WORK</div>
-            <h2 class="h2">Things I&apos;ve <em>shipped</em>.</h2>
-          </div>
+          <h2>## Roles</h2>
+          <ul>
+            <li><strong>Delta Air Lines</strong> · Data Engineer on the Operations Strategy Reporting (ODSR) team. <em>Moving to Delta's AI Enablement team in June 2026.</em></li>
+            <li><strong>Diversified Gas &amp; Oil</strong> · Systems Engineer (concurrent role since Aug 2025).</li>
+            <li><strong>That Simple Tech</strong> · founder + operator. AI-native consultancy.</li>
+          </ul>
 
-          <div class="work-grid">
-            <article class="work-card feature">
-              <div class="wc-head">
-                <span class="wc-tag mono">DATA PLATFORM</span>
-                <span class="wc-org mono">Diversified Gas &amp; Oil</span>
-              </div>
-              <h3 class="wc-title">Corporate Historian &mdash; OT Data Platform</h3>
-              <p class="wc-desc">Lead engineer on the central operational data warehouse. TimescaleDB with 15 schemas, 77 tables, 114 PL/pgSQL functions managing 1.6M+ daily production records. Star-schema with effective-dated dimensions, hypertables, continuous aggregates. ETL from CygNet SCADA, Snowflake, MNR; outbound to Grafana, regulatory reporting, volume control. Embedded pgai with OpenAI / Anthropic / Cohere / Voyage for automated issue detection over operator free-text and semantic search across historical observations.</p>
-              <div class="wc-stats">
-                <div><span class="wc-n mono">1.6M+</span><span class="wc-ll">records / day</span></div>
-                <div><span class="wc-n mono">114</span><span class="wc-ll">pl/pgsql functions</span></div>
-                <div><span class="wc-n mono">15 / 77</span><span class="wc-ll">schemas / tables</span></div>
-              </div>
-              <div class="chips">
-                <span>TimescaleDB</span><span>PL/pgSQL</span><span>pgai</span><span>Python</span><span>CygNet</span><span>Snowflake</span>
-              </div>
-            </article>
+          <h2>## Credential</h2>
+          <p><strong>AWS Certified Solutions Architect — Professional.</strong> Earned Jan 2025, valid through Jan 2028.</p>
 
-            <article class="work-card">
-              <div class="wc-head">
-                <span class="wc-tag mono">ML PLATFORM</span>
-                <span class="wc-org mono">Diversified Gas &amp; Oil</span>
-              </div>
-              <h3 class="wc-title">Historian ML &mdash; Industrial Anomaly Detection</h3>
-              <p class="wc-desc">ML platform over 186M+ telemetry observations. Pattern-detection engine covering 8 categories of industrial sensor failure. Isolation Forest for unsupervised anomaly detection, Random Forest for pattern classification, LSTM for sensor-level time-series forecasting. Packaged as an AWS CDK stack (SageMaker, S3, IAM, Secrets Manager, CloudWatch) with a 580-line handoff runbook.</p>
-              <div class="wc-stats">
-                <div><span class="wc-n mono">186M+</span><span class="wc-ll">observations</span></div>
-                <div><span class="wc-n mono">8</span><span class="wc-ll">failure categories</span></div>
-                <div><span class="wc-n mono">3</span><span class="wc-ll">model architectures</span></div>
-              </div>
-              <div class="chips">
-                <span>SageMaker</span><span>CDK</span><span>Python</span><span>Isolation Forest</span><span>LSTM</span>
-              </div>
-            </article>
+          <h2>## Trajectory</h2>
+          <table class="doc-table">
+            <tr><th>2021</th><td>TrueCoders · Full-Stack Software Engineering · Birmingham, AL</td></tr>
+            <tr><th>2021 — 23</th><td>Delta Air Lines · Associate Software Developer</td></tr>
+            <tr><th>2023 — 26</th><td>Delta Air Lines · Data Engineer · ODSR</td></tr>
+            <tr><th>Jan 2025</th><td><strong>AWS Solutions Architect — Professional</strong></td></tr>
+            <tr><th>Aug 2025</th><td>Diversified Gas &amp; Oil · Systems Engineer</td></tr>
+            <tr><th>Jun 2026</th><td>Delta AI Enablement Team — incoming</td></tr>
+          </table>
 
-            <article class="work-card">
-              <div class="wc-head">
-                <span class="wc-tag mono">DEVOPS</span>
-                <span class="wc-org mono">Diversified Gas &amp; Oil</span>
-              </div>
-              <h3 class="wc-title">Hybrid DB Migration CI/CD</h3>
-              <p class="wc-desc">5-stage Azure DevOps pipeline on a self-hosted Windows agent: validates, classifies, approves, executes, documents every schema change. Pattern-based SQL risk classifier (BLOCKED / HIGH / MEDIUM / LOW) over ~30 regex patterns. DROP TABLE foreign-key safeguard. Transactional execution with auto-rollback. Git-based state tracking, nightly drift detection, SOX-aligned audit logging.</p>
-              <div class="wc-stats">
-                <div><span class="wc-n mono">5</span><span class="wc-ll">pipeline stages</span></div>
-                <div><span class="wc-n mono">~30</span><span class="wc-ll">risk patterns</span></div>
-                <div><span class="wc-n mono">SOX</span><span class="wc-ll">audit-aligned</span></div>
-              </div>
-              <div class="chips">
-                <span>Azure DevOps</span><span>PowerShell</span><span>PostgreSQL</span><span>git</span>
-              </div>
-            </article>
-
-            <article class="work-card feature">
-              <div class="wc-head">
-                <span class="wc-tag mono">AI&nbsp;SYSTEMS</span>
-                <span class="wc-org mono">That Simple Tech</span>
-              </div>
-              <h3 class="wc-title">Autonomous AI Agency Platform</h3>
-              <p class="wc-desc">10-agent system handling the full client lifecycle &mdash; intake, sales, scoping, build, QA, deploy, support, billing, comms, phone &mdash; across 8 project types (websites, web &amp; mobile apps, IT setup &amp; support, AI automation, cloud infra, consulting). MiniMax M2.7 primary across roles (100% tool calling, ~3.3&times; cheaper, ~2.5&times; faster than the Claude API path); Gemini 3 Flash Preview for visual QA. Voice via Pipecat + Telnyx + Deepgram Nova; agents execute inside Cua sandboxes. SvelteKit client portal on Vercel with a unified revision queue (portal / email / SMS / phone), SSE updates, S3 assets. Harness: Qwen Code on OpenRouter.</p>
-              <div class="wc-stats">
-                <div><span class="wc-n mono">10</span><span class="wc-ll">specialized agents</span></div>
-                <div><span class="wc-n mono">8</span><span class="wc-ll">project types</span></div>
-                <div><span class="wc-n mono">~15&times;</span><span class="wc-ll">cost reduction target</span></div>
-              </div>
-              <div class="chips">
-                <span>MiniMax M2.7</span><span>Gemini 3 Flash</span><span>OpenRouter</span><span>Qwen Code</span><span>Pipecat</span><span>Telnyx</span><span>Deepgram Nova</span><span>Cua</span><span>SvelteKit</span><span>Stripe</span><span>Redis + Celery</span><span>MCP</span>
-              </div>
-            </article>
-
-            <article class="work-card">
-              <div class="wc-head">
-                <span class="wc-tag mono">AI AT SCALE</span>
-                <span class="wc-org mono">Delta Air Lines</span>
-              </div>
-              <h3 class="wc-title">Reporting Modernization &mdash; SCRD / ESR / MPR v2</h3>
-              <p class="wc-desc">Architected and shipped a JSON-first v2 replacement for three legacy operational scorecards (SCRD, ESR, MPR) at Delta &mdash; SCRD alone processing ~2,300 organizational entities per monthly close. Python packagers run against Teradata, wired into a Step Functions parallel branch with DynamoDB caching and an S3-backed registry; renderer collapsed from per-report PPTX/HTML templates to a single vanilla-JS viewer (Chart.js, CSS custom properties, no build pipeline). AWS Bedrock (Claude Haiku 4.5) generates auto-narratives and per-KPI explanations served via <code class="mono">/api/v1/kpi-explain</code> on API Gateway + Lambda, with schema validation, source-data grounding, and content-keyed DynamoDB caching. Closed seven latent defects in the legacy code en route &mdash; including an <code class="mono">eval()</code>-based templating injection and swapped year/month columns. Delivered phases 0&ndash;3 inside a restrictive <code class="mono">delegate-admin-</code> IAM boundary plus a Lambda-creation SCP, deploying AI compute as a Glue Python-shell job to ship without an architecture exception.</p>
-              <div class="wc-stats">
-                <div><span class="wc-n mono">~2.3k</span><span class="wc-ll">entities / closeout</span></div>
-                <div><span class="wc-n mono">7</span><span class="wc-ll">legacy defects closed</span></div>
-                <div><span class="wc-n mono">13</span><span class="wc-ll">engineering docs · phases 0&ndash;3</span></div>
-              </div>
-              <div class="chips">
-                <span>AWS Bedrock</span><span>Claude Haiku 4.5</span><span>Step Functions</span><span>DynamoDB</span><span>Glue (Python shell)</span><span>Lambda</span><span>API Gateway</span><span>S3</span><span>Teradata</span><span>Chart.js</span>
-              </div>
-            </article>
-
-            <article class="work-card">
-              <div class="wc-head">
-                <span class="wc-tag mono">MOBILE</span>
-                <span class="wc-org mono">Diversified Gas &amp; Oil</span>
-              </div>
-              <h3 class="wc-title">Field App &mdash; Offline-First Tank Inspections</h3>
-              <p class="wc-desc">Ionic 8 + Angular 20 + Capacitor app replacing paper-based tank inspections. Single codebase deploys as native iOS / Android and installable PWA. Offline-first on Dexie / IndexedDB with master-data caching and a write-queue for user-generated content; sync resolves conflicts on reconnect. AWS Amplify backend with AppSync GraphQL, DynamoDB, Cognito brokered with Azure AD via MSAL.</p>
-              <div class="wc-stats">
-                <div><span class="wc-n mono">3</span><span class="wc-ll">targets, 1 codebase</span></div>
-                <div><span class="wc-n mono">Offline</span><span class="wc-ll">first by design</span></div>
-                <div><span class="wc-n mono">SSO</span><span class="wc-ll">Cognito ↔ Azure AD</span></div>
-              </div>
-              <div class="chips">
-                <span>Ionic 8</span><span>Angular 20</span><span>Capacitor</span><span>Dexie</span><span>AppSync</span><span>Cognito</span>
-              </div>
-            </article>
-          </div>
+          <h2>## Base</h2>
+          <p>Springville · Alabama · US. Remote anywhere. CT time zone.</p>
         </div>
-      </section>
-
-      <section class="stack" id="stack">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker mono"><span class="dot"></span>STACK</div>
-            <h2 class="h2">Capabilities, <em>by depth</em>.</h2>
-          </div>
-
-          <div class="stack-grid">
-            <div class="stack-card">
-              <div class="sc-head mono">AI&nbsp;/&nbsp;ML</div>
-              <ul class="sc-list">
-                <li>AI agent design &amp; orchestration</li>
-                <li>MCP (Model Context Protocol)</li>
-                <li>Claude API · OpenAI API · OpenRouter</li>
-                <li>AWS Bedrock: Anthropic · OpenAI · Titan · Cohere · Voyage</li>
-                <li>pgai · RAG · vector embeddings</li>
-                <li>Local inference: vLLM · Ollama</li>
-                <li>Qwen 3.6 Plus · Qwen 3.5-Omni · Qwen 3 Coder</li>
-                <li>MiniMax M2.7 · DeepSeek-R1 · Gemma</li>
-                <li>BGE-M3 (embeddings) · F5-TTS</li>
-                <li>Isolation Forest · Random Forest · LSTM</li>
-                <li>Pipecat · Deepgram · Cua (sandbox)</li>
-              </ul>
-            </div>
-
-            <div class="stack-card">
-              <div class="sc-head mono">AWS</div>
-              <ul class="sc-list">
-                <li>Lambda · Step Functions · EventBridge</li>
-                <li>SageMaker · Bedrock · Comprehend</li>
-                <li>Amplify · AppSync · Cognito</li>
-                <li>API Gateway · S3 · DynamoDB · Redshift</li>
-                <li>Glue · Kinesis · OpenSearch Serverless</li>
-                <li>Fargate (incl. Spot) · ECR</li>
-                <li>CDK (Python + TypeScript) · CloudFormation</li>
-                <li>Secrets Manager · IAM · STS · KMS</li>
-              </ul>
-            </div>
-
-            <div class="stack-card">
-              <div class="sc-head mono">DATA &amp; ETL</div>
-              <ul class="sc-list">
-                <li>TimescaleDB · hypertables · continuous aggregates</li>
-                <li>PostgreSQL 14+ · PL/pgSQL</li>
-                <li>Teradata · Snowflake · Redshift</li>
-                <li>pgvector · pgai · JSONB</li>
-                <li>Star-schema · effective-dated dimensions</li>
-                <li>AWS Glue · Python ETL · Kinesis</li>
-                <li>CygNet SCADA · MNR</li>
-              </ul>
-            </div>
-
-            <div class="stack-card">
-              <div class="sc-head mono">APP&nbsp;STACK</div>
-              <ul class="sc-list">
-                <li>FastAPI · Node.js · GraphQL (AppSync)</li>
-                <li>SQLAlchemy 2.0 · Pydantic · Alembic</li>
-                <li>SvelteKit 2 / Svelte 5 · React · Angular 20</li>
-                <li>Ionic 8 · Capacitor · PWA</li>
-                <li>Tailwind · Three.js · Threlte · GSAP</li>
-                <li>Dexie / IndexedDB (offline-first)</li>
-              </ul>
-            </div>
-
-            <div class="stack-card">
-              <div class="sc-head mono">DEVOPS</div>
-              <ul class="sc-list">
-                <li>Azure DevOps Pipelines (multi-stage)</li>
-                <li>GitLab CI/CD · GitHub Actions</li>
-                <li>AWS CDK · CloudFormation</li>
-                <li>Docker · Docker Compose</li>
-                <li>Self-hosted build agents</li>
-                <li>Pattern-based SQL risk classification</li>
-                <li>SOX-aligned audit logging</li>
-                <li>Tailscale · Caddy · Grafana / Prometheus</li>
-              </ul>
-            </div>
-
-            <div class="stack-card">
-              <div class="sc-head mono">LANGUAGES &amp; IDENTITY</div>
-              <ul class="sc-list">
-                <li>Python · TypeScript · JavaScript</li>
-                <li>SQL (Teradata · PostgreSQL · Snowflake)</li>
-                <li>PL/pgSQL · Bash · PowerShell</li>
-                <li>HTML · CSS</li>
-                <li class="sep">&nbsp;</li>
-                <li>Microsoft Entra ID / Azure AD · MSAL</li>
-                <li>AWS Cognito · PingFederate SSO</li>
-                <li>Stripe · Telnyx · GA4 · GSC</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="trajectory" id="trajectory">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker mono"><span class="dot"></span>TRAJECTORY</div>
-            <h2 class="h2">Where I&apos;ve been, <em>where I&apos;m going</em>.</h2>
-          </div>
-
-          <ol class="tl">
-            <li class="tl-item">
-              <div class="tl-yr mono">2021</div>
-              <div class="tl-what"><strong>TrueCoders</strong> · Full-Stack Software Engineering · Birmingham, AL</div>
-            </li>
-            <li class="tl-item">
-              <div class="tl-yr mono">2021 → 23</div>
-              <div class="tl-what"><strong>Delta Air Lines</strong> · Associate Software Developer · Executive AI Reporting POC · AWS Glue CI/CD · STS SSO automation</div>
-            </li>
-            <li class="tl-item">
-              <div class="tl-yr mono">2023 → 26</div>
-              <div class="tl-what"><strong>Delta Air Lines</strong> · Data Engineer · Operations Strategy Reporting (ODSR)</div>
-            </li>
-            <li class="tl-item tl-accent">
-              <div class="tl-yr mono">Jan 2025</div>
-              <div class="tl-what"><strong>AWS Certified Solutions Architect &mdash; Professional</strong> · valid through Jan 2028</div>
-            </li>
-            <li class="tl-item">
-              <div class="tl-yr mono">Aug 2025</div>
-              <div class="tl-what"><strong>Diversified Gas &amp; Oil</strong> · Systems Engineer · OT data platform, ML, field app, route management</div>
-            </li>
-            <li class="tl-item tl-next">
-              <div class="tl-yr mono">Jun 2026</div>
-              <div class="tl-what"><strong>Delta AI Enablement Team</strong> · selected · AI agent standards across Operations Planning &amp; Performance &mdash; <span class="tl-pill mono">INCOMING</span></div>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="contact" id="contact">
-        <div class="container">
-          <div class="section-head">
-            <div class="kicker mono"><span class="dot"></span>CONTACT</div>
-            <h2 class="h2">Let&apos;s <em>build something</em>.</h2>
-          </div>
-
-          <div class="contact-grid">
-            <a class="contact-card" href="mailto:crocker.j.adam@gmail.com">
-              <div class="cc-k mono">EMAIL</div>
-              <div class="cc-v">crocker.j.adam@gmail.com</div>
-            </a>
-            <a class="contact-card" href="tel:+12052761071">
-              <div class="cc-k mono">PHONE</div>
-              <div class="cc-v">(205)&nbsp;276-1071</div>
-            </a>
-            <a class="contact-card" href="https://linkedin.com/in/adam-crocker1" target="_blank" rel="noopener">
-              <div class="cc-k mono">LINKEDIN</div>
-              <div class="cc-v">adam-crocker1&nbsp;<span class="arrow">&#8599;</span></div>
-            </a>
-            <a class="contact-card" href="https://github.com/captcrock" target="_blank" rel="noopener">
-              <div class="cc-k mono">GITHUB</div>
-              <div class="cc-v">captcrock&nbsp;<span class="arrow">&#8599;</span></div>
-            </a>
-            <a class="contact-card resume-card" href="/assets/Adam_Crocker_Resume.pdf" download="Adam_Crocker_Resume.pdf">
-              <div class="cc-k mono">RÉSUMÉ</div>
-              <div class="cc-v">Adam_Crocker_Resume.pdf&nbsp;<span class="arrow">↓</span></div>
-            </a>
-            <div class="contact-card static">
-              <div class="cc-k mono">BASE</div>
-              <div class="cc-v">Springville · AL · US</div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container footer-row">
-        <div class="ft-l mono">&copy; <span id="yr">2026</span> Adam Crocker</div>
-        <div class="ft-r mono">crockerjadam.com · v.2026.05</div>
       </div>
-    </footer>
+    </template>
+
+    <template id="app-stack">
+      <div class="sysprefs">
+        <div class="sp-head">System / Capabilities</div>
+        <div class="sp-grid">
+          <div class="sp-tile">
+            <div class="sp-tile-icon">🧠</div>
+            <div class="sp-tile-h">AI / ML</div>
+            <div class="sp-tile-body">Agent orchestration · MCP · Claude/OpenAI/OpenRouter · Bedrock (Anthropic, Titan, Cohere, Voyage) · pgai · RAG · vLLM · Ollama · Qwen 3.6+ · MiniMax M2.7 · DeepSeek-R1 · Pipecat · Deepgram · Cua · Isolation Forest · Random Forest · LSTM</div>
+          </div>
+          <div class="sp-tile">
+            <div class="sp-tile-icon">☁️</div>
+            <div class="sp-tile-h">AWS</div>
+            <div class="sp-tile-body">Lambda · Step Functions · EventBridge · SageMaker · Bedrock · Amplify · AppSync · Cognito · API Gateway · S3 · DynamoDB · Redshift · Glue · Kinesis · Fargate · ECR · CDK (Py+TS) · CloudFormation · Secrets · IAM · STS · KMS</div>
+          </div>
+          <div class="sp-tile">
+            <div class="sp-tile-icon">🗄️</div>
+            <div class="sp-tile-h">Data &amp; ETL</div>
+            <div class="sp-tile-body">TimescaleDB · hypertables · continuous aggregates · PostgreSQL · PL/pgSQL · Teradata · Snowflake · Redshift · pgvector · pgai · star-schema · effective-dated dims · CygNet SCADA · MNR</div>
+          </div>
+          <div class="sp-tile">
+            <div class="sp-tile-icon">🎛️</div>
+            <div class="sp-tile-h">App Stack</div>
+            <div class="sp-tile-body">FastAPI · Node · GraphQL · SQLAlchemy 2 · Pydantic · Alembic · SvelteKit 2 / Svelte 5 · React · Angular 20 · Ionic 8 · Capacitor · PWA · Tailwind · Three.js · Threlte · GSAP · Dexie / IndexedDB</div>
+          </div>
+          <div class="sp-tile">
+            <div class="sp-tile-icon">🛠️</div>
+            <div class="sp-tile-h">DevOps</div>
+            <div class="sp-tile-body">Azure DevOps Pipelines · GitLab CI/CD · GitHub Actions · CDK · CloudFormation · Docker · self-hosted build agents · pattern-based SQL risk classification · SOX-aligned audit logging · Tailscale · Caddy · Grafana / Prometheus</div>
+          </div>
+          <div class="sp-tile">
+            <div class="sp-tile-icon">⌨️</div>
+            <div class="sp-tile-h">Languages &amp; Identity</div>
+            <div class="sp-tile-body">Python · TypeScript · JavaScript · SQL · PL/pgSQL · Bash · PowerShell · HTML · CSS · Entra ID / Azure AD · MSAL · Cognito · PingFederate · Stripe · Telnyx · GA4 · GSC</div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="app-photos">
+      <div class="photos">
+        <picture>
+          <source type="image/webp" srcset="/assets/portrait.webp 1x, /assets/portrait@2x.webp 2x" />
+          <img src="/assets/portrait.jpg" alt="Adam Crocker" />
+        </picture>
+        <div class="photos-meta">
+          <div class="ph-name">Adam Crocker</div>
+          <div class="ph-loc">Birmingham, AL · 2025</div>
+        </div>
+      </div>
+    </template>
+
+    <template id="app-mail">
+      <div class="mail">
+        <div class="mail-tab">New Message</div>
+        <div class="mail-fields">
+          <div class="mail-row"><span class="mail-k">To:</span><span class="mail-v">crocker.j.adam@gmail.com</span></div>
+          <div class="mail-row"><span class="mail-k">From:</span><input type="email" placeholder="your-email@domain.com" /></div>
+          <div class="mail-row"><span class="mail-k">Subject:</span><input type="text" placeholder="Hi Adam — quick question about your portfolio" value="Saw your portfolio" /></div>
+        </div>
+        <textarea class="mail-body">Hi Adam,
+
+I came across your portfolio and wanted to reach out about
+
+[your message here]
+
+Best,
+</textarea>
+        <div class="mail-actions">
+          <a class="mail-send" href="mailto:crocker.j.adam@gmail.com?subject=Saw%20your%20portfolio">
+            Send via mail client →
+          </a>
+          <span class="mail-tip">Opens your default mail app. Or copy:&nbsp; <code>crocker.j.adam@gmail.com</code></span>
+        </div>
+      </div>
+    </template>
+
+    <template id="app-resume">
+      <div class="pdf-host">
+        <div class="pdf-bar">
+          <span>Adam_Crocker_Resume.pdf</span>
+          <a class="pdf-dl" href="/assets/Adam_Crocker_Resume.pdf" download="Adam_Crocker_Resume.pdf">Download ↓</a>
+        </div>
+        <iframe src="/assets/Adam_Crocker_Resume.pdf#zoom=page-width" title="Résumé"></iframe>
+      </div>
+    </template>
+
+    <template id="app-project">
+      <div class="proj">
+        <div class="proj-head">
+          <div class="proj-meta">
+            <span class="proj-tag" data-tag></span>
+            <span class="proj-org" data-org></span>
+          </div>
+          <h1 class="proj-title" data-title></h1>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc" data-desc></p>
+          <div class="proj-stats" data-stats></div>
+          <div class="proj-chips" data-chips></div>
+        </div>
+      </div>
+    </template>
 
     <script src="/assets/main.js" defer></script>
   </body>
