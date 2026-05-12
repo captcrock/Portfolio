@@ -16,26 +16,36 @@
 
   /* --- Prompt → response template map --- */
   var routes = [
-    { keys: ['intro', 'who', 'about', 'yourself', 'tell me about you'],
-      threadKey: 'intro', userMsg: 'Who are you?', tpl: 't-intro' },
-    { keys: ['ship', 'shipped', 'built', 'projects', 'portfolio', 'selected work', 'work'],
-      threadKey: 'work', userMsg: 'What have you shipped?', tpl: 't-work' },
-    { keys: ['other three', 'more projects', 'rest of', 'remaining'],
-      threadKey: null, userMsg: 'Show me the other three projects', tpl: 't-work-more' },
-    { keys: ['delta', 'odsr', 'airlines', 'enablement'],
-      threadKey: 'delta', userMsg: 'Tell me about your Delta work', tpl: 't-delta' },
-    { keys: ['scrd', 'scorecard'],
-      threadKey: null, userMsg: 'What is SCRD?', tpl: 't-scrd' },
-    { keys: ['eval', 'injection', 'defect', 'bug'],
-      threadKey: null, userMsg: 'Tell me about the eval() injection', tpl: 't-eval' },
-    { keys: ['dgo', 'diversified', 'gas', 'oil', 'historian', 'timescale', 'industrial'],
-      threadKey: 'dgo', userMsg: 'Diversified Gas & Oil deep-dive', tpl: 't-dgo' },
-    { keys: ['tst', 'that simple tech', 'agency', 'agent', 'consultancy'],
-      threadKey: 'tst', userMsg: 'That Simple Tech — the agency thing', tpl: 't-tst' },
-    { keys: ['stack', 'tech', 'tools', 'capabilities', 'languages', 'aws', 'work with'],
-      threadKey: 'stack', userMsg: "What's your stack?", tpl: 't-stack' },
-    { keys: ['contact', 'reach', 'hire', 'email', 'phone', 'linkedin', 'github', 'résumé', 'resume'],
-      threadKey: 'contact', userMsg: 'How do I reach you?', tpl: 't-contact' }
+    { keys: ['intro', 'who', 'about', 'yourself', 'tell me about you',
+             'quién', 'quien', 'sobre ti', 'sobre vos', 'preséntate', 'presentate', 'tú eres', 'tu eres'],
+      threadKey: 'intro', userMsg: '¿Quién eres?', tpl: 't-intro' },
+    { keys: ['ship', 'shipped', 'built', 'projects', 'portfolio', 'selected work', 'work',
+             'lanzado', 'lanzaste', 'construido', 'proyectos', 'portafolio', 'trabajo', 'has hecho'],
+      threadKey: 'work', userMsg: '¿Qué has lanzado?', tpl: 't-work' },
+    { keys: ['other three', 'more projects', 'rest of', 'remaining',
+             'otros tres', 'más proyectos', 'mas proyectos', 'los otros', 'restantes'],
+      threadKey: null, userMsg: 'Muéstrame los otros tres proyectos', tpl: 't-work-more' },
+    { keys: ['delta', 'odsr', 'airlines', 'enablement',
+             'habilitación', 'habilitacion', 'aerolínea', 'aerolinea'],
+      threadKey: 'delta', userMsg: 'Cuéntame sobre tu trabajo en Delta', tpl: 't-delta' },
+    { keys: ['scrd', 'scorecard', 'tablero'],
+      threadKey: null, userMsg: '¿Qué es SCRD?', tpl: 't-scrd' },
+    { keys: ['eval', 'injection', 'defect', 'bug',
+             'inyección', 'inyeccion', 'defecto'],
+      threadKey: null, userMsg: 'Cuéntame de la inyección por eval()', tpl: 't-eval' },
+    { keys: ['dgo', 'diversified', 'gas', 'oil', 'historian', 'timescale', 'industrial',
+             'petróleo', 'petroleo', 'a fondo'],
+      threadKey: 'dgo', userMsg: 'Diversified Gas & Oil a fondo', tpl: 't-dgo' },
+    { keys: ['tst', 'that simple tech', 'agency', 'agent', 'consultancy',
+             'agencia', 'agente', 'consultora', 'consultoría', 'consultoria'],
+      threadKey: 'tst', userMsg: 'That Simple Tech — la consultora', tpl: 't-tst' },
+    { keys: ['stack', 'tech', 'tools', 'capabilities', 'languages', 'aws', 'work with',
+             'herramientas', 'tecnologías', 'tecnologias', 'lenguajes', 'capacidades'],
+      threadKey: 'stack', userMsg: '¿Cuál es tu stack?', tpl: 't-stack' },
+    { keys: ['contact', 'reach', 'hire', 'email', 'phone', 'linkedin', 'github', 'résumé', 'resume',
+             'contacto', 'contactar', 'contacta', 'correo', 'teléfono', 'telefono', 'cv',
+             'currículum', 'curriculum', 'cómo te', 'como te', 'contratar'],
+      threadKey: 'contact', userMsg: '¿Cómo te contacto?', tpl: 't-contact' }
   ];
 
   var threadKeyToRoute = {};
@@ -43,10 +53,10 @@
 
   /* Initial suggestions */
   var initialSuggestions = [
-    'What have you shipped?',
-    'Tell me about your Delta work',
-    "What's your stack?",
-    'How do I reach you?'
+    '¿Qué has lanzado?',
+    'Cuéntame sobre tu trabajo en Delta',
+    '¿Cuál es tu stack?',
+    '¿Cómo te contacto?'
   ];
 
   function renderSuggestions(items) {
@@ -67,9 +77,9 @@
     var row = document.createElement('div');
     row.className = 'msg-row is-user';
     row.innerHTML =
-      '<div class="msg-avatar">YOU</div>' +
+      '<div class="msg-avatar">TÚ</div>' +
       '<div class="msg-body">' +
-        '<div class="msg-name">You</div>' +
+        '<div class="msg-name">Tú</div>' +
         '<div class="msg-content"><p></p></div>' +
       '</div>';
     row.querySelector('.msg-content p').textContent = text;
@@ -83,7 +93,7 @@
     row.innerHTML =
       '<div class="msg-avatar"><img src="/assets/portrait.webp" alt="" /></div>' +
       '<div class="msg-body">' +
-        '<div class="msg-name">Adam (AI)</div>' +
+        '<div class="msg-name">Adam (IA)</div>' +
         '<div class="msg-content"><div class="typing"><span></span><span></span><span></span></div></div>' +
       '</div>';
     thread.appendChild(row);
@@ -146,14 +156,14 @@
   function rotateSuggestions(lastPrompt) {
     // Keep suggestions fresh / varied based on context
     var pool = [
-      'What have you shipped?',
-      'Tell me about your Delta work',
-      "What's your stack?",
-      'How do I reach you?',
-      'Diversified Gas & Oil deep-dive',
-      'That Simple Tech — the agency thing',
-      'What is SCRD?',
-      'Show me the other three projects'
+      '¿Qué has lanzado?',
+      'Cuéntame sobre tu trabajo en Delta',
+      '¿Cuál es tu stack?',
+      '¿Cómo te contacto?',
+      'Diversified Gas & Oil a fondo',
+      'That Simple Tech — la consultora',
+      '¿Qué es SCRD?',
+      'Muéstrame los otros tres proyectos'
     ];
     var lower = lastPrompt.toLowerCase();
     return pool.filter(function (p) {

@@ -1,14 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
-    <title>Adam Crocker — Conversational Portfolio</title>
-    <meta name="description" content="Chat with an AI version of Adam Crocker about his work, stack, and trajectory." />
+    <title>Adam Crocker — Portafolio Conversacional</title>
+    <meta name="description" content="Conversa con una versión IA de Adam Crocker sobre su trabajo, su stack y su trayectoria." />
     <meta name="theme-color" content="#1d1c1a" />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-    <link rel="canonical" href="https://crockerjadam.com/" />
+    <link rel="canonical" href="https://es.crockerjadam.com/" />
+    <link rel="alternate" hreflang="en" href="https://crockerjadam.com/" />
+    <link rel="alternate" hreflang="es" href="https://es.crockerjadam.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://crockerjadam.com/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,66 +20,62 @@
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
   <body>
-    <!-- =========================================================
-         APP SHELL: sidebar + chat
-         ========================================================= -->
     <div class="app">
-      <!-- Sidebar -->
       <aside class="sidebar" id="sidebar">
         <header class="sb-head">
-          <button class="sb-toggle" id="sb-toggle" aria-label="Toggle sidebar">
+          <button class="sb-toggle" id="sb-toggle" aria-label="Mostrar/ocultar panel">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><path d="M14 12h7M14 6h7M14 18h7"/></svg>
           </button>
           <div class="sb-logo">
             <span class="sb-dot"></span>
-            <span class="sb-name">Crocker / AI</span>
+            <span class="sb-name">Crocker / IA</span>
           </div>
-          <button class="sb-new" data-new-chat aria-label="New chat">
+          <button class="sb-new" data-new-chat aria-label="Nueva conversación">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </button>
         </header>
 
         <div class="sb-section">
-          <div class="sb-section-label">Conversations</div>
+          <div class="sb-section-label">Conversaciones</div>
           <nav class="sb-list" id="sb-list">
             <button class="sb-item is-active" data-thread="intro">
-              <span class="sb-item-title">Who is Adam, exactly?</span>
-              <span class="sb-item-time">Just now</span>
+              <span class="sb-item-title">¿Quién es Adam, exactamente?</span>
+              <span class="sb-item-time">Ahora</span>
             </button>
             <button class="sb-item" data-thread="work">
-              <span class="sb-item-title">Selected work — what have you shipped?</span>
-              <span class="sb-item-time">Today</span>
+              <span class="sb-item-title">Trabajo destacado — ¿qué has lanzado?</span>
+              <span class="sb-item-time">Hoy</span>
             </button>
             <button class="sb-item" data-thread="delta">
-              <span class="sb-item-title">Tell me about your Delta work</span>
-              <span class="sb-item-time">Today</span>
+              <span class="sb-item-title">Cuéntame sobre tu trabajo en Delta</span>
+              <span class="sb-item-time">Hoy</span>
             </button>
             <button class="sb-item" data-thread="dgo">
-              <span class="sb-item-title">Diversified Gas &amp; Oil deep-dive</span>
-              <span class="sb-item-time">Today</span>
+              <span class="sb-item-title">Diversified Gas &amp; Oil a fondo</span>
+              <span class="sb-item-time">Hoy</span>
             </button>
             <button class="sb-item" data-thread="tst">
-              <span class="sb-item-title">That Simple Tech — the agency thing</span>
-              <span class="sb-item-time">Today</span>
+              <span class="sb-item-title">That Simple Tech — la consultora</span>
+              <span class="sb-item-time">Hoy</span>
             </button>
             <button class="sb-item" data-thread="stack">
-              <span class="sb-item-title">What's your stack?</span>
-              <span class="sb-item-time">Today</span>
+              <span class="sb-item-title">¿Cuál es tu stack?</span>
+              <span class="sb-item-time">Hoy</span>
             </button>
             <button class="sb-item" data-thread="contact">
-              <span class="sb-item-title">How do I reach you?</span>
-              <span class="sb-item-time">Today</span>
+              <span class="sb-item-title">¿Cómo te contacto?</span>
+              <span class="sb-item-time">Hoy</span>
             </button>
           </nav>
         </div>
 
         <div class="sb-section sb-section--alt">
-          <div class="sb-section-label">View</div>
+          <div class="sb-section-label">Vista</div>
           <a class="sb-altview" href="/classic.html">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
             <span class="sb-altview-text">
-              <span class="sb-altview-title">Read as a normal site</span>
-              <span class="sb-altview-sub">Scrolling document view</span>
+              <span class="sb-altview-title">Ver como sitio normal</span>
+              <span class="sb-altview-sub">Vista de documento</span>
             </span>
             <svg class="sb-altview-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </a>
@@ -89,118 +88,111 @@
             </div>
             <div class="sb-profile-text">
               <div class="sb-profile-name">Adam Crocker</div>
-              <div class="sb-profile-role">AI Cloud Engineer · SAP-Pro</div>
+              <div class="sb-profile-role">Ingeniero IA · AWS SAP-Pro</div>
             </div>
           </div>
         </footer>
       </aside>
 
-      <!-- Main chat area -->
       <main class="chat">
         <header class="chat-bar">
-          <button class="chat-menu" id="chat-menu" aria-label="Open sidebar">
+          <button class="chat-menu" id="chat-menu" aria-label="Abrir panel">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
           <div class="chat-title">
-            <span class="chat-model">Adam Crocker — AI Version</span>
-            <span class="chat-status"><span class="pulse"></span>v.2026 · grounded in real bio &amp; work history</span>
+            <span class="chat-model">Adam Crocker — Versión IA</span>
+            <span class="chat-status"><span class="pulse"></span>v.2026 · basado en biografía y trayectoria reales</span>
           </div>
           <a class="chat-resume" href="/assets/Adam_Crocker_Resume.pdf" download="Adam_Crocker_Resume.pdf">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            <span>Résumé</span>
+            <span>CV</span>
           </a>
+          <a class="chat-lang" href="https://crockerjadam.com/" title="English version">EN</a>
         </header>
 
-        <div class="chat-thread" id="chat-thread">
-          <!-- Messages get injected here -->
-        </div>
+        <div class="chat-thread" id="chat-thread"></div>
 
         <div class="chat-input-wrap">
-          <div class="chat-suggestions" id="chat-suggestions">
-            <!-- Suggested prompts injected here -->
-          </div>
+          <div class="chat-suggestions" id="chat-suggestions"></div>
           <form class="chat-input" id="chat-form" autocomplete="off">
-            <button type="button" class="chat-attach" aria-label="Attach">
+            <button type="button" class="chat-attach" aria-label="Adjuntar">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
             </button>
             <input
               type="text"
               id="chat-text"
-              placeholder="Ask the AI Adam about projects, stack, Delta work…"
-              aria-label="Message" />
-            <button type="submit" class="chat-send" aria-label="Send">
+              placeholder="Pregúntale al Adam IA sobre proyectos, stack, Delta…"
+              aria-label="Mensaje" />
+            <button type="submit" class="chat-send" aria-label="Enviar">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l14 0M13 5l7 7-7 7"/></svg>
             </button>
           </form>
           <div class="chat-foot">
-            <span>Responses are pre-authored by the human Adam. Static portfolio · no LLM call.</span>
+            <span>Las respuestas las escribió Adam (el humano). Portafolio estático · sin llamada a un LLM.</span>
           </div>
         </div>
       </main>
     </div>
 
-    <!-- =========================================================
-         Hidden response templates — pulled into chat by JS
-         ========================================================= -->
     <template id="t-intro">
-      <p>Hey — I'm <strong>Adam Crocker</strong>. AI Cloud Engineer, AWS Solutions Architect — Professional (Jan 2025, valid Jan 2028). Based in <strong>Springville, Alabama</strong>; remote anywhere.</p>
-      <p>I work in two roles right now: <strong>Data Engineer on Delta's ODSR team</strong> (moving to Delta's <strong>AI Enablement team</strong> in June 2026) and <strong>Systems Engineer at Diversified Gas &amp; Oil</strong> since Aug 2025. I also run <strong>That Simple Tech</strong> on the side — an AI-native consultancy.</p>
-      <p>The short version of what I do: <em>I build AI-native systems for businesses of every size</em>. Fortune 500 down to mom-and-pop shops. Same person, same care.</p>
+      <p>Hola — soy <strong>Adam Crocker</strong>. Ingeniero IA en la Nube, AWS Solutions Architect — Professional (enero 2025, válido hasta enero 2028). Basado en <strong>Springville, Alabama</strong>; trabajo remoto desde cualquier lugar.</p>
+      <p>Hoy ocupo dos puestos: <strong>Ingeniero de Datos en el equipo ODSR de Delta Air Lines</strong> (en junio de 2026 paso al <strong>equipo de Habilitación de IA</strong> de Delta) e <strong>Ingeniero de Sistemas en Diversified Gas &amp; Oil</strong> desde agosto de 2025. En paralelo dirijo <strong>That Simple Tech</strong> — mi consultora nativa de IA.</p>
+      <p>La versión corta de lo que hago: <em>construyo sistemas nativos de IA para empresas de todos los tamaños</em>. Desde Fortune 500 hasta el negocio de la esquina. La misma persona, el mismo cuidado.</p>
       <div class="msg-actions">
-        <button class="chip" data-prompt="What have you shipped?">▸ What have you shipped?</button>
-        <button class="chip" data-prompt="Tell me about your Delta work">▸ Tell me about your Delta work</button>
-        <button class="chip" data-prompt="What's your stack?">▸ What's your stack?</button>
-        <button class="chip" data-prompt="How do I reach you?">▸ How do I reach you?</button>
+        <button class="chip" data-prompt="¿Qué has lanzado?">▸ ¿Qué has lanzado?</button>
+        <button class="chip" data-prompt="Cuéntame sobre tu trabajo en Delta">▸ Cuéntame sobre Delta</button>
+        <button class="chip" data-prompt="¿Cuál es tu stack?">▸ ¿Cuál es tu stack?</button>
+        <button class="chip" data-prompt="¿Cómo te contacto?">▸ ¿Cómo te contacto?</button>
       </div>
     </template>
 
     <template id="t-work">
-      <p>Here are six pieces I'd want a hiring engineer to look at — different shapes, all production:</p>
+      <p>Seis piezas que le mostraría a un ingeniero responsable de contratar — formatos distintos, todas en producción:</p>
 
       <div class="card">
         <div class="card-head">
-          <span class="card-tag">DATA PLATFORM</span>
+          <span class="card-tag">PLATAFORMA DE DATOS</span>
           <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
-        <div class="card-title">Corporate Historian — OT Data Platform</div>
-        <p class="card-desc">Lead engineer on the central operational data warehouse. TimescaleDB with 15 schemas, 77 tables, 114 PL/pgSQL functions, 1.6M+ daily production records. Star schema, hypertables, continuous aggregates. ETL from CygNet SCADA, Snowflake, MNR; outbound to Grafana and regulatory reporting. Embedded pgai for automated issue detection over operator free-text and semantic search across historical observations.</p>
-        <div class="card-meta">1.6M+ records/day · 114 PL/pgSQL functions · 15/77 schemas/tables</div>
+        <div class="card-title">Corporate Historian — Plataforma de datos OT</div>
+        <p class="card-desc">Ingeniero principal del almacén central de datos operacionales. TimescaleDB con 15 esquemas, 77 tablas, 114 funciones en PL/pgSQL y más de 1,6 M de registros de producción diarios. Esquema en estrella, hypertables y agregados continuos. ETL desde CygNet SCADA, Snowflake y MNR; salida hacia Grafana y reportes regulatorios. Lleva pgai embebido para detección automática de incidencias sobre texto libre de operadores y búsqueda semántica en observaciones históricas.</p>
+        <div class="card-meta">1,6 M+ registros/día · 114 funciones PL/pgSQL · 15/77 esquemas/tablas</div>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <span class="card-tag">AI SYSTEMS</span>
+          <span class="card-tag">SISTEMAS IA</span>
           <span class="card-org">That Simple Tech</span>
         </div>
-        <div class="card-title">Autonomous AI Agency Platform</div>
-        <p class="card-desc">10-agent system handling the full client lifecycle — intake, sales, scoping, build, QA, deploy, support, billing, comms, phone — across 8 project types. MiniMax M2.7 primary; Gemini 3 Flash Preview for visual QA. Voice via Pipecat + Telnyx + Deepgram Nova; agents execute inside Cua sandboxes. SvelteKit client portal on Vercel.</p>
-        <div class="card-meta">10 specialized agents · 8 project types · ~15× cost reduction target</div>
+        <div class="card-title">Plataforma Autónoma de Agencia IA</div>
+        <p class="card-desc">Sistema de 10 agentes que cubre el ciclo completo del cliente — captación, ventas, alcance, construcción, QA, despliegue, soporte, facturación, comunicaciones y voz — sobre 8 tipos de proyecto. MiniMax M2.7 como cerebro principal; Gemini 3 Flash Preview para QA visual. Voz con Pipecat + Telnyx + Deepgram Nova; los agentes se ejecutan dentro de sandboxes de Cua. Portal de cliente en SvelteKit sobre Vercel.</p>
+        <div class="card-meta">10 agentes especializados · 8 tipos de proyecto · meta: ~15× reducción de costo</div>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <span class="card-tag">AI AT SCALE</span>
+          <span class="card-tag">IA A ESCALA</span>
           <span class="card-org">Delta Air Lines</span>
         </div>
-        <div class="card-title">Reporting Modernization — SCRD / ESR / MPR v2</div>
-        <p class="card-desc">JSON-first replacement for three legacy scorecards (~2,300 entities/closeout). Python packagers on Teradata, Step Functions parallel branch, DynamoDB caching, single vanilla-JS viewer. AWS Bedrock (Claude Haiku 4.5) for auto-narratives + per-KPI explanations via <code>/api/v1/kpi-explain</code>. Closed seven latent defects en route, including an <code>eval()</code>-based templating injection.</p>
-        <div class="card-meta">~2,300 entities/closeout · 7 defects closed · 13 engineering docs</div>
+        <div class="card-title">Modernización de Reportes — SCRD / ESR / MPR v2</div>
+        <p class="card-desc">Reemplazo "JSON-first" de tres scorecards heredados (~2.300 entidades por cierre mensual). Empaquetadores en Python sobre Teradata, rama paralela en Step Functions, caché en DynamoDB y un único visor en vanilla JS. AWS Bedrock (Claude Haiku 4.5) para narrativas automáticas y explicaciones por KPI vía <code>/api/v1/kpi-explain</code>. En el camino cerré siete defectos latentes, incluyendo una inyección por <code>eval()</code> en el motor de plantillas.</p>
+        <div class="card-meta">~2.300 entidades/cierre · 7 defectos cerrados · 13 documentos técnicos</div>
       </div>
 
-      <p>Want a closer look at any of these? Or there are three more — <button class="inline-chip" data-prompt="Show me the other three projects">show me the other three</button>.</p>
+      <p>¿Quieres profundizar en alguno? También hay tres más — <button class="inline-chip" data-prompt="Muéstrame los otros tres proyectos">muéstrame los otros tres</button>.</p>
     </template>
 
     <template id="t-work-more">
-      <p>The other three:</p>
+      <p>Los otros tres:</p>
 
       <div class="card">
         <div class="card-head">
-          <span class="card-tag">ML PLATFORM</span>
+          <span class="card-tag">PLATAFORMA ML</span>
           <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
-        <div class="card-title">Historian ML — Industrial Anomaly Detection</div>
-        <p class="card-desc">ML platform over 186M+ telemetry observations. 8 categories of industrial sensor failure. Isolation Forest for unsupervised anomaly detection, Random Forest for pattern classification, LSTM for sensor-level forecasting. Packaged as an AWS CDK stack with a 580-line handoff runbook.</p>
-        <div class="card-meta">186M+ observations · 8 failure categories · 3 model architectures</div>
+        <div class="card-title">Historian ML — Detección Industrial de Anomalías</div>
+        <p class="card-desc">Plataforma de ML sobre más de 186 M de observaciones de telemetría. 8 categorías de fallos en sensores industriales. Isolation Forest para detección no supervisada de anomalías, Random Forest para clasificación de patrones y LSTM para pronóstico a nivel de sensor. Empaquetado como stack de AWS CDK con un runbook de transferencia de 580 líneas.</p>
+        <div class="card-meta">186 M+ observaciones · 8 categorías de fallo · 3 arquitecturas de modelo</div>
       </div>
 
       <div class="card">
@@ -208,112 +200,112 @@
           <span class="card-tag">DEVOPS</span>
           <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
-        <div class="card-title">Hybrid DB Migration CI/CD</div>
-        <p class="card-desc">5-stage Azure DevOps pipeline on a self-hosted Windows agent. SQL risk classifier (BLOCKED / HIGH / MEDIUM / LOW) over ~30 regex patterns. DROP TABLE foreign-key safeguard. Transactional execution with auto-rollback. SOX-aligned audit logging.</p>
-        <div class="card-meta">5 stages · ~30 risk patterns · SOX-aligned</div>
+        <div class="card-title">CI/CD para Migración de BD Híbrida</div>
+        <p class="card-desc">Pipeline de 5 etapas en Azure DevOps sobre un agente Windows autohospedado. Clasificador de riesgo SQL (BLOCKED / HIGH / MEDIUM / LOW) sobre ~30 patrones regex. Salvaguarda anti-DROP TABLE con verificación de claves foráneas. Ejecución transaccional con rollback automático. Registro de auditoría alineado con SOX.</p>
+        <div class="card-meta">5 etapas · ~30 patrones de riesgo · alineado con SOX</div>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <span class="card-tag">MOBILE</span>
+          <span class="card-tag">MÓVIL</span>
           <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
-        <div class="card-title">Field App — Offline-First Tank Inspections</div>
-        <p class="card-desc">Ionic 8 + Angular 20 + Capacitor. Single codebase → iOS, Android, installable PWA. Offline-first on Dexie / IndexedDB with a write-queue and conflict-resolving sync. AWS AppSync + DynamoDB; Cognito federated to Azure AD via MSAL.</p>
-        <div class="card-meta">3 targets, 1 codebase · offline-first · enterprise SSO</div>
+        <div class="card-title">Field App — Inspecciones de Tanques Offline-First</div>
+        <p class="card-desc">Ionic 8 + Angular 20 + Capacitor. Un solo código base → iOS, Android y PWA instalable. Offline-first sobre Dexie / IndexedDB con cola de escritura y sincronización con resolución de conflictos. AWS AppSync + DynamoDB; Cognito federado contra Azure AD vía MSAL.</p>
+        <div class="card-meta">3 plataformas, 1 código · offline-first · SSO corporativo</div>
       </div>
     </template>
 
     <template id="t-delta">
-      <p>I've been at Delta since 2021. Two phases:</p>
-      <p><strong>2021–23: Associate Software Developer.</strong> The early-career half — Executive AI Reporting POC, AWS Glue CI/CD work, STS SSO automation pure-bash (worked around Windows Defender + admin restrictions on the corporate fleet).</p>
-      <p><strong>2023–present: Data Engineer on the Operations Strategy Reporting (ODSR) team.</strong> The work I'm most known for internally: <em>Reporting Modernization v2</em>. The SCRD / ESR / MPR scorecards were huge PPTX / HTML monoliths — I led the replacement onto a JSON-first stack on AWS-native services (Glue, Step Functions, DynamoDB, S3, API Gateway, Bedrock), with Claude Haiku 4.5 generating auto-narratives and per-KPI explanations.</p>
-      <p>The constraint was real: <code>delegate-admin-</code> IAM boundary plus an SCP blocking new Lambda creation. I shipped the AI compute as a <strong>Glue Python-shell job</strong> with custom boto3 packaging so we didn't need an architecture exception.</p>
-      <p><strong>June 2026: selected for Delta's AI Enablement Team.</strong> AI agent standards across Operations Planning &amp; Performance. That's the next chapter.</p>
+      <p>Estoy en Delta desde 2021. Dos etapas:</p>
+      <p><strong>2021–23: Desarrollador de Software Asociado.</strong> La primera mitad de carrera — POC de Reportes Ejecutivos con IA, trabajo de CI/CD sobre AWS Glue, automatización STS SSO en bash puro (sorteando Windows Defender y las restricciones de admin de la flota corporativa).</p>
+      <p><strong>2023–presente: Ingeniero de Datos en el equipo de Operations Strategy Reporting (ODSR).</strong> El trabajo por el que más se me conoce internamente: <em>Modernización de Reportes v2</em>. Los scorecards SCRD / ESR / MPR eran enormes monolitos de PPTX / HTML — lideré el reemplazo hacia un stack JSON-first sobre servicios nativos de AWS (Glue, Step Functions, DynamoDB, S3, API Gateway, Bedrock), con Claude Haiku 4.5 generando narrativas automáticas y explicaciones por KPI.</p>
+      <p>La restricción era real: frontera IAM <code>delegate-admin-</code> más un SCP que bloqueaba crear funciones Lambda nuevas. El cómputo de IA lo entregué como un <strong>Glue Python-shell job</strong> con empaquetado boto3 personalizado, así no hizo falta excepción de arquitectura.</p>
+      <p><strong>Junio 2026: seleccionado para el equipo de Habilitación de IA de Delta.</strong> Estándares de agentes IA cruzando Planeación y Performance de Operaciones. Ese es el próximo capítulo.</p>
       <div class="msg-actions">
-        <button class="chip" data-prompt="What is SCRD?">▸ What's SCRD?</button>
-        <button class="chip" data-prompt="Tell me about the eval() injection">▸ The eval() defect story</button>
+        <button class="chip" data-prompt="¿Qué es SCRD?">▸ ¿Qué es SCRD?</button>
+        <button class="chip" data-prompt="Cuéntame de la inyección por eval()">▸ La historia del defecto eval()</button>
       </div>
     </template>
 
     <template id="t-scrd">
-      <p>SCRD = Scorecard. It's an internal Delta operational scorecard. The v1 ran as a generated PPTX with per-business-unit slides; v2 is a JSON-first data package + a single vanilla-JS Chart.js viewer. The win wasn't just the renderer — it was making one packager handle <strong>~2,300 organizational entities per monthly close</strong>, with the renderer code surface shrinking enough that Python-heavy teammates could maintain the frontend.</p>
-      <p>ESR (Executive Strategy Reporting) and MPR (Monthly Performance Reporting) ride the same pipeline now.</p>
+      <p>SCRD = Scorecard. Es un tablero operacional interno de Delta. La v1 corría como un PPTX generado con diapositivas por unidad de negocio; la v2 es un paquete de datos JSON-first más un único visor vanilla-JS con Chart.js. El logro no fue solo el renderer — fue lograr que un solo empaquetador maneje <strong>~2.300 entidades organizacionales por cierre mensual</strong>, con un frontend tan compacto que los compañeros más orientados a Python pueden mantenerlo.</p>
+      <p>ESR (Executive Strategy Reporting) y MPR (Monthly Performance Reporting) corren hoy sobre el mismo pipeline.</p>
     </template>
 
     <template id="t-eval">
-      <p>While reviewing the legacy SCRD code I found a template renderer using <code>eval()</code> on operator-supplied strings — a templating-injection vector hiding in plain sight. Closed it as part of the v2 migration along with six other latent defects (the worst was swapped year/month columns on one of the rollups, silently miscategorizing closeouts).</p>
-      <p>Total: seven defects closed during the modernization, all logged with reproduction steps in the 13 engineering docs.</p>
+      <p>Mientras revisaba el código heredado de SCRD encontré un motor de plantillas que usaba <code>eval()</code> sobre cadenas provistas por operadores — un vector de inyección por plantilla escondido a plena vista. Lo cerré como parte de la migración v2 junto con otros seis defectos latentes (el peor: columnas de año y mes intercambiadas en uno de los rollups, lo que clasificaba mal cierres en silencio).</p>
+      <p>Total: siete defectos cerrados durante la modernización, todos con pasos de reproducción en los 13 documentos técnicos.</p>
     </template>
 
     <template id="t-dgo">
-      <p>I joined <strong>Diversified Gas &amp; Oil</strong> as a Systems Engineer in <strong>August 2025</strong>, concurrent with Delta. Three core systems I own:</p>
+      <p>Entré a <strong>Diversified Gas &amp; Oil</strong> como Ingeniero de Sistemas en <strong>agosto de 2025</strong>, en paralelo con Delta. Tres sistemas centrales bajo mi cargo:</p>
       <ol class="num-list">
-        <li><strong>Corporate Historian</strong> — the central OT data platform. TimescaleDB, 1.6M+ daily production records. I'm the lead engineer.</li>
-        <li><strong>Historian ML</strong> — anomaly detection over 186M+ telemetry observations. Isolation Forest + Random Forest + LSTM, on SageMaker via CDK.</li>
-        <li><strong>Field App</strong> — Ionic 8 + Angular 20 + Capacitor offline-first tank-inspection app, replacing paper forms across the field operation.</li>
+        <li><strong>Corporate Historian</strong> — la plataforma central de datos OT. TimescaleDB, 1,6 M+ registros de producción diarios. Soy el ingeniero principal.</li>
+        <li><strong>Historian ML</strong> — detección de anomalías sobre 186 M+ observaciones de telemetría. Isolation Forest + Random Forest + LSTM, sobre SageMaker vía CDK.</li>
+        <li><strong>Field App</strong> — app offline-first de inspección de tanques en Ionic 8 + Angular 20 + Capacitor, que reemplaza formularios en papel en toda la operación de campo.</li>
       </ol>
-      <p>Smaller but adjacent: <strong>Hybrid DB Migration CI/CD</strong> — a 5-stage Azure DevOps pipeline that classifies every schema change against ~30 regex risk patterns and gates accordingly. SOX-aligned audit logging.</p>
+      <p>Y algo adyacente, más pequeño: <strong>CI/CD para Migración de BD Híbrida</strong> — un pipeline de 5 etapas en Azure DevOps que clasifica cada cambio de esquema contra ~30 patrones regex de riesgo y controla los gates correspondientes. Auditoría alineada con SOX.</p>
     </template>
 
     <template id="t-tst">
-      <p><strong>That Simple Tech (TST)</strong> is my AI-native technology consultancy. Sole proprietor / operator. The "headline product" is the <strong>Autonomous AI Agency Platform</strong> — a 10-agent system that handles the full client lifecycle for small-business engagements:</p>
+      <p><strong>That Simple Tech (TST)</strong> es mi consultora tecnológica nativa de IA. Operador y dueño único. El producto estrella es la <strong>Plataforma Autónoma de Agencia IA</strong> — un sistema de 10 agentes que maneja el ciclo completo del cliente en proyectos para pequeñas empresas:</p>
       <p class="role-list">
-        intake · sales · scoping · build · QA · deploy · support · billing · comms · phone
+        captación · ventas · alcance · construcción · QA · despliegue · soporte · facturación · comunicaciones · voz
       </p>
-      <p>Architecture decisions worth flagging:</p>
+      <p>Decisiones de arquitectura que conviene resaltar:</p>
       <ul>
-        <li><strong>MiniMax M2.7</strong> as the primary brain — 100% tool calling, ~3.3× cheaper and ~2.5× faster than the equivalent Claude API path</li>
-        <li><strong>Gemini 3 Flash Preview</strong> for visual QA</li>
-        <li><strong>Pipecat + Telnyx + Deepgram Nova</strong> for the voice pipeline</li>
-        <li><strong>Cua</strong> sandboxes for agent execution</li>
-        <li><strong>SvelteKit on Vercel</strong> for the client portal with a unified revision queue (portal / email / SMS / phone all funnel to one inbox)</li>
-        <li><strong>Qwen Code on OpenRouter</strong> as the development harness</li>
+        <li><strong>MiniMax M2.7</strong> como cerebro principal — 100% de uso de herramientas, ~3,3× más barato y ~2,5× más rápido que la ruta equivalente con la API de Claude</li>
+        <li><strong>Gemini 3 Flash Preview</strong> para QA visual</li>
+        <li><strong>Pipecat + Telnyx + Deepgram Nova</strong> para el pipeline de voz</li>
+        <li>Sandboxes de <strong>Cua</strong> para ejecución de agentes</li>
+        <li><strong>SvelteKit sobre Vercel</strong> para el portal de cliente, con una cola unificada de revisiones (portal / correo / SMS / teléfono entran a un solo buzón)</li>
+        <li><strong>Qwen Code en OpenRouter</strong> como entorno de desarrollo</li>
       </ul>
-      <p>Client portals never expose AI terminology — to clients it just looks like a really fast agency. There's a VA review gate (PENDING_REVIEW) on all client-facing output.</p>
+      <p>Los portales nunca exponen terminología de IA — para el cliente se ve simplemente como una agencia muy rápida. Hay un control de revisión humana (PENDING_REVIEW) sobre todo lo que se entrega al cliente.</p>
     </template>
 
     <template id="t-stack">
-      <p>Six buckets, sixty-plus tools. Ask me about anything specific.</p>
+      <p>Seis cajas, más de sesenta herramientas. Pregúntame por cualquiera.</p>
 
       <div class="stack-grid">
         <div class="stack-box">
-          <div class="stack-h">AI / ML</div>
-          <div class="stack-body">Agent design &amp; orchestration · MCP · Claude API · OpenAI API · OpenRouter · AWS Bedrock (Anthropic, OpenAI, Titan, Cohere, Voyage) · pgai · RAG · vector embeddings · vLLM · Ollama · Qwen 3.6 Plus / 3.5-Omni / 3 Coder · MiniMax M2.7 · DeepSeek-R1 · Gemma · BGE-M3 · F5-TTS · Isolation Forest · Random Forest · LSTM · Pipecat · Deepgram · Cua</div>
+          <div class="stack-h">IA / ML</div>
+          <div class="stack-body">Diseño y orquestación de agentes · MCP · API de Claude · API de OpenAI · OpenRouter · AWS Bedrock (Anthropic, OpenAI, Titan, Cohere, Voyage) · pgai · RAG · embeddings vectoriales · vLLM · Ollama · Qwen 3.6 Plus / 3.5-Omni / 3 Coder · MiniMax M2.7 · DeepSeek-R1 · Gemma · BGE-M3 · F5-TTS · Isolation Forest · Random Forest · LSTM · Pipecat · Deepgram · Cua</div>
         </div>
         <div class="stack-box">
           <div class="stack-h">AWS</div>
-          <div class="stack-body">Lambda · Step Functions · EventBridge · SageMaker · Bedrock · Comprehend · Amplify · AppSync · Cognito · API Gateway · S3 · DynamoDB · Redshift · Glue · Kinesis · OpenSearch Serverless · Fargate (incl. Spot) · ECR · CDK (Py + TS) · CloudFormation · Secrets Manager · IAM · STS · KMS</div>
+          <div class="stack-body">Lambda · Step Functions · EventBridge · SageMaker · Bedrock · Comprehend · Amplify · AppSync · Cognito · API Gateway · S3 · DynamoDB · Redshift · Glue · Kinesis · OpenSearch Serverless · Fargate (incluido Spot) · ECR · CDK (Py + TS) · CloudFormation · Secrets Manager · IAM · STS · KMS</div>
         </div>
         <div class="stack-box">
-          <div class="stack-h">Data &amp; ETL</div>
-          <div class="stack-body">TimescaleDB · hypertables · continuous aggregates · PostgreSQL 14+ · PL/pgSQL · Teradata · Snowflake · Redshift · pgvector · pgai · JSONB · star-schema · effective-dated dimensions · AWS Glue · Python ETL · Kinesis · CygNet SCADA · MNR</div>
+          <div class="stack-h">Datos &amp; ETL</div>
+          <div class="stack-body">TimescaleDB · hypertables · agregados continuos · PostgreSQL 14+ · PL/pgSQL · Teradata · Snowflake · Redshift · pgvector · pgai · JSONB · esquema en estrella · dimensiones con fecha efectiva · AWS Glue · ETL en Python · Kinesis · CygNet SCADA · MNR</div>
         </div>
         <div class="stack-box">
-          <div class="stack-h">App Stack</div>
+          <div class="stack-h">Aplicaciones</div>
           <div class="stack-body">FastAPI · Node.js · GraphQL (AppSync) · SQLAlchemy 2.0 · Pydantic · Alembic · SvelteKit 2 / Svelte 5 · React · Angular 20 · Ionic 8 · Capacitor · PWA · Tailwind · Three.js · Threlte · GSAP · Dexie / IndexedDB</div>
         </div>
         <div class="stack-box">
           <div class="stack-h">DevOps</div>
-          <div class="stack-body">Azure DevOps Pipelines · GitLab CI/CD · GitHub Actions · AWS CDK · CloudFormation · Docker · Docker Compose · self-hosted build agents · pattern-based SQL risk classification · SOX-aligned audit logging · Tailscale · Caddy · Grafana / Prometheus</div>
+          <div class="stack-body">Azure DevOps Pipelines · GitLab CI/CD · GitHub Actions · AWS CDK · CloudFormation · Docker · Docker Compose · agentes de build autohospedados · clasificación de riesgo SQL basada en patrones · auditoría alineada con SOX · Tailscale · Caddy · Grafana / Prometheus</div>
         </div>
         <div class="stack-box">
-          <div class="stack-h">Languages &amp; Identity</div>
+          <div class="stack-h">Lenguajes &amp; Identidad</div>
           <div class="stack-body">Python · TypeScript · JavaScript · SQL (Teradata · PostgreSQL · Snowflake) · PL/pgSQL · Bash · PowerShell · HTML · CSS · Microsoft Entra ID / Azure AD · MSAL · AWS Cognito · PingFederate SSO · Stripe · Telnyx · GA4 · GSC</div>
         </div>
       </div>
     </template>
 
     <template id="t-contact">
-      <p>Easiest paths in:</p>
+      <p>Las vías más rápidas para llegar a mí:</p>
       <div class="contact-grid">
         <a class="contact-pill" href="mailto:crocker.j.adam@gmail.com">
-          <span class="cp-k">Email</span>
+          <span class="cp-k">Correo</span>
           <span class="cp-v">crocker.j.adam@gmail.com</span>
         </a>
         <a class="contact-pill" href="tel:+12052761071">
-          <span class="cp-k">Phone</span>
-          <span class="cp-v">(205) 276-1071</span>
+          <span class="cp-k">Teléfono</span>
+          <span class="cp-v">+1 (205) 276-1071</span>
         </a>
         <a class="contact-pill" href="https://linkedin.com/in/adam-crocker1" target="_blank" rel="noopener">
           <span class="cp-k">LinkedIn</span>
@@ -324,22 +316,22 @@
           <span class="cp-v">captcrock ↗</span>
         </a>
         <a class="contact-pill" href="/assets/Adam_Crocker_Resume.pdf" download="Adam_Crocker_Resume.pdf">
-          <span class="cp-k">Résumé</span>
+          <span class="cp-k">CV</span>
           <span class="cp-v">Adam_Crocker_Resume.pdf ↓</span>
         </a>
       </div>
-      <p>Springville · Alabama · US. CT time zone, remote anywhere.</p>
+      <p>Springville · Alabama · EE. UU. Zona horaria CT, remoto desde cualquier lugar.</p>
     </template>
 
     <template id="t-fallback">
-      <p>Good question — but I haven't been pre-authored to answer that one. This portfolio is static; the responses you see are written by the human Adam, not generated. Try one of:</p>
+      <p>Buena pregunta — pero no me han preescrito una respuesta para esa. Este portafolio es estático; lo que ves lo escribió Adam (el humano), no se genera. Prueba con:</p>
       <div class="msg-actions">
-        <button class="chip" data-prompt="What have you shipped?">▸ What have you shipped?</button>
-        <button class="chip" data-prompt="Tell me about your Delta work">▸ Tell me about your Delta work</button>
-        <button class="chip" data-prompt="What's your stack?">▸ What's your stack?</button>
-        <button class="chip" data-prompt="How do I reach you?">▸ How do I reach you?</button>
+        <button class="chip" data-prompt="¿Qué has lanzado?">▸ ¿Qué has lanzado?</button>
+        <button class="chip" data-prompt="Cuéntame sobre tu trabajo en Delta">▸ Cuéntame sobre tu trabajo en Delta</button>
+        <button class="chip" data-prompt="¿Cuál es tu stack?">▸ ¿Cuál es tu stack?</button>
+        <button class="chip" data-prompt="¿Cómo te contacto?">▸ ¿Cómo te contacto?</button>
       </div>
-      <p>Or just <a href="mailto:crocker.j.adam@gmail.com">email me</a>.</p>
+      <p>O simplemente <a href="mailto:crocker.j.adam@gmail.com">escríbeme un correo</a>.</p>
     </template>
 
     <script src="/assets/main.js" defer></script>
