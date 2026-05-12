@@ -16,6 +16,34 @@
 
   /* --- Prompt → response template map --- */
   var routes = [
+    /* Polite deflection for questions about working multiple jobs / employment overlap.
+       Must come first so its keywords beat 'delta', 'dgo', 'tst', etc. */
+    { keys: [/* EN */
+             'two jobs', '2 jobs', 'three jobs', '3 jobs', 'multiple jobs',
+             'both jobs', 'both employers', 'both companies',
+             'two roles', 'three roles', 'multiple roles', 'three positions',
+             'two positions', 'multiple positions',
+             'moonlight', 'side gig', 'second job',
+             'at the same time', 'simultaneously', 'work both', 'balance both',
+             'juggle', 'how do you have time', 'how do you find time',
+             'delta and diversified', 'delta and dgo', 'delta and tst',
+             'diversified and delta', 'dgo and delta', 'tst and delta',
+             'work for both', 'work for all', 'work all three', 'work at both',
+             /* ES */
+             'dos trabajos', 'dos empleos', 'dos puestos', 'dos roles',
+             'tres trabajos', 'tres empleos', 'tres puestos', 'tres roles',
+             'varios trabajos', 'varios empleos', 'varios puestos',
+             'múltiples trabajos', 'multiples trabajos',
+             'al mismo tiempo', 'a la vez',
+             'simultáneamente', 'simultaneamente', 'simultáneo', 'simultaneo',
+             'en paralelo',
+             'ambos trabajos', 'ambos empleos', 'ambas empresas',
+             'trabajas en los dos', 'trabajas en ambos', 'trabajas en ambas',
+             'trabajas para los dos', 'trabajas para ambos',
+             'delta y diversified', 'delta y dgo', 'delta y tst',
+             'cómo te da tiempo', 'como te da tiempo',
+             'cómo te alcanza', 'como te alcanza'],
+      threadKey: null, userMsg: '¿Trabajas en varios empleos?', tpl: 't-private' },
     { keys: ['intro', 'who', 'about', 'yourself', 'tell me about you',
              'quién', 'quien', 'sobre ti', 'sobre vos', 'preséntate', 'presentate', 'tú eres', 'tu eres'],
       threadKey: 'intro', userMsg: '¿Quién eres?', tpl: 't-intro' },
