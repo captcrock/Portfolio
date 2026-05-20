@@ -236,6 +236,31 @@
         border-top: 1px solid var(--hairline);
       }
 
+      /* ===== Colaboradores ===== */
+      .partners-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 8px;
+      }
+      .partner-tile {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 22px;
+        background: var(--bg-2);
+        border: 1px solid var(--hairline-2);
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--ink-2);
+        letter-spacing: 0.005em;
+        transition: border-color 0.18s ease, color 0.18s ease;
+      }
+      .partner-tile:hover {
+        color: var(--ink);
+        border-color: var(--accent);
+      }
+
       .stack-grid {
         display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
       }
@@ -370,7 +395,6 @@
           <article class="card">
             <div class="card-head">
               <span class="card-tag">Plataforma de datos</span>
-              <span class="card-org">Diversified Gas &amp; Oil</span>
             </div>
             <h3 class="card-title">Corporate Historian — Plataforma de datos OT</h3>
             <p class="card-desc">Ingeniero principal del almacén central de datos operacionales. TimescaleDB con 15 esquemas, 77 tablas, 114 funciones en PL/pgSQL y más de 1,6 M de registros de producción diarios. Esquema en estrella, hypertables y agregados continuos. ETL desde CygNet SCADA, Snowflake y MNR; salida hacia Grafana y reportes regulatorios. Lleva pgai embebido para detección automática de incidencias sobre texto libre de operadores y búsqueda semántica en observaciones históricas.</p>
@@ -380,7 +404,6 @@
           <article class="card">
             <div class="card-head">
               <span class="card-tag">Sistemas IA</span>
-              <span class="card-org">That Simple Tech</span>
             </div>
             <h3 class="card-title">Plataforma Autónoma de Agencia IA</h3>
             <p class="card-desc">Sistema de 10 agentes que cubre el ciclo completo del cliente — captación, ventas, alcance, construcción, QA, despliegue, soporte, facturación, comunicaciones y voz — sobre 8 tipos de proyecto. MiniMax M2.7 como cerebro principal; Gemini 3 Flash Preview para QA visual. Voz con Pipecat + Telnyx + Deepgram Nova; los agentes se ejecutan dentro de sandboxes de Cua. Portal de cliente en SvelteKit sobre Vercel.</p>
@@ -390,7 +413,6 @@
           <article class="card">
             <div class="card-head">
               <span class="card-tag">IA a escala</span>
-              <span class="card-org">Delta Air Lines</span>
             </div>
             <h3 class="card-title">Modernización de Reportes — SCRD / ESR / MPR v2</h3>
             <p class="card-desc">Reemplazo "JSON-first" de tres scorecards heredados (~2.300 entidades por cierre mensual). Empaquetadores en Python sobre Teradata, rama paralela en Step Functions, caché en DynamoDB y un único visor en vanilla JS. AWS Bedrock (Claude Haiku 4.5) para narrativas automáticas y explicaciones por KPI vía <code>/api/v1/kpi-explain</code>. En el camino cerré siete defectos latentes, incluyendo una inyección por <code>eval()</code> en el motor de plantillas.</p>
@@ -400,7 +422,6 @@
           <article class="card">
             <div class="card-head">
               <span class="card-tag">Plataforma ML</span>
-              <span class="card-org">Diversified Gas &amp; Oil</span>
             </div>
             <h3 class="card-title">Historian ML — Detección Industrial de Anomalías</h3>
             <p class="card-desc">Plataforma de ML sobre más de 186 M de observaciones de telemetría. 8 categorías de fallos en sensores industriales. Isolation Forest para detección no supervisada de anomalías, Random Forest para clasificación de patrones y LSTM para pronóstico a nivel de sensor. Empaquetado como stack de AWS CDK con un runbook de transferencia de 580 líneas.</p>
@@ -410,7 +431,6 @@
           <article class="card">
             <div class="card-head">
               <span class="card-tag">DevOps</span>
-              <span class="card-org">Diversified Gas &amp; Oil</span>
             </div>
             <h3 class="card-title">CI/CD para Migración de BD Híbrida</h3>
             <p class="card-desc">Pipeline de 5 etapas en Azure DevOps sobre un agente Windows autohospedado. Clasificador de riesgo SQL (BLOCKED / HIGH / MEDIUM / LOW) sobre ~30 patrones regex. Salvaguarda anti-DROP TABLE con verificación de claves foráneas. Ejecución transaccional con rollback automático. Registro de auditoría alineado con SOX.</p>
@@ -420,12 +440,24 @@
           <article class="card">
             <div class="card-head">
               <span class="card-tag">Móvil</span>
-              <span class="card-org">Diversified Gas &amp; Oil</span>
             </div>
             <h3 class="card-title">Field App — Inspecciones de Tanques Offline-First</h3>
             <p class="card-desc">Ionic 8 + Angular 20 + Capacitor. Un solo código base → iOS, Android y PWA instalable. Offline-first sobre Dexie / IndexedDB con cola de escritura y sincronización con resolución de conflictos. AWS AppSync + DynamoDB; Cognito federado contra Azure AD vía MSAL.</p>
             <div class="card-meta">3 plataformas, 1 código · offline-first · SSO corporativo</div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Colaboradores ===== -->
+    <section>
+      <div class="wrap">
+        <div class="label">Colaboradores</div>
+        <h2 class="sec-h2">Organizaciones <em>con las que he hecho trabajo</em>.</h2>
+        <div class="partners-grid">
+          <span class="partner-tile">Delta Air Lines</span>
+          <span class="partner-tile">Diversified Gas &amp; Oil</span>
+          <span class="partner-tile">That Simple Tech</span>
         </div>
       </div>
     </section>

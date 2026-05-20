@@ -67,8 +67,8 @@
               <span class="sb-item-title">Trabajo destacado — ¿qué has lanzado?</span>
               <span class="sb-item-time">Hoy</span>
             </button>
-            <button class="sb-item" data-thread="delta">
-              <span class="sb-item-title">Cuéntame sobre tu trabajo en Delta</span>
+            <button class="sb-item" data-thread="partners">
+              <span class="sb-item-title">Con quién he colaborado</span>
               <span class="sb-item-time">Hoy</span>
             </button>
             <button class="sb-item" data-thread="stack">
@@ -148,13 +148,12 @@
     </div>
 
     <template id="t-intro">
-      <p>Hola — soy <strong>Adam Crocker</strong>. Ingeniero IA en la Nube, AWS Solutions Architect — Professional (enero 2025, válido hasta enero 2028). Basado en <strong>Springville, Alabama</strong>; trabajo remoto desde cualquier lugar.</p>
-      <p>Soy <strong>Ingeniero de Datos en el equipo ODSR de Delta Air Lines</strong>, y en junio de 2026 paso al <strong>equipo de Habilitación de IA</strong> de Delta — ahí es donde vive la mayor parte de mi trabajo reciente.</p>
-      <p>La versión corta de lo que hago: <em>construyo sistemas nativos de IA para empresas de todos los tamaños</em>. Desde Fortune 500 hasta el negocio de la esquina. La misma persona, el mismo cuidado.</p>
+      <p>Hola — soy <strong>Adam Crocker</strong>. Ingeniero IA en la Nube. <strong>AWS Solutions Architect — Professional</strong> (enero 2025, válido hasta enero 2028). Basado en <strong>Springville, Alabama</strong>; trabajo remoto desde cualquier lugar.</p>
+      <p>Construyo <em>sistemas nativos de IA para empresas de todos los tamaños</em> — desde Fortune 500 hasta el negocio de la esquina. La misma persona, el mismo cuidado. La mayor parte de mi trabajo se ubica en la intersección de <strong>LLMs y agentes</strong>, <strong>AWS</strong> e <strong>ingeniería de datos de producción</strong> — y el trabajo de integración entre ellos.</p>
       <div class="msg-actions">
         <button class="chip" data-prompt="¿Qué has lanzado?">▸ ¿Qué has lanzado?</button>
-        <button class="chip" data-prompt="Cuéntame sobre tu trabajo en Delta">▸ Cuéntame sobre Delta</button>
         <button class="chip" data-prompt="¿Cuál es tu stack?">▸ ¿Cuál es tu stack?</button>
+        <button class="chip" data-prompt="¿Con quién has colaborado?">▸ Colaboradores</button>
         <button class="chip" data-prompt="¿Cómo te contacto?">▸ ¿Cómo te contacto?</button>
       </div>
     </template>
@@ -165,7 +164,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">PLATAFORMA DE DATOS</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">Corporate Historian — Plataforma de datos OT</div>
         <p class="card-desc">Ingeniero principal del almacén central de datos operacionales. TimescaleDB con 15 esquemas, 77 tablas, 114 funciones en PL/pgSQL y más de 1,6 M de registros de producción diarios. Esquema en estrella, hypertables y agregados continuos. ETL desde CygNet SCADA, Snowflake y MNR; salida hacia Grafana y reportes regulatorios. Lleva pgai embebido para detección automática de incidencias sobre texto libre de operadores y búsqueda semántica en observaciones históricas.</p>
@@ -175,7 +173,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">SISTEMAS IA</span>
-          <span class="card-org">That Simple Tech</span>
         </div>
         <div class="card-title">Plataforma Autónoma de Agencia IA</div>
         <p class="card-desc">Sistema de 10 agentes que cubre el ciclo completo del cliente — captación, ventas, alcance, construcción, QA, despliegue, soporte, facturación, comunicaciones y voz — sobre 8 tipos de proyecto. MiniMax M2.7 como cerebro principal; Gemini 3 Flash Preview para QA visual. Voz con Pipecat + Telnyx + Deepgram Nova; los agentes se ejecutan dentro de sandboxes de Cua. Portal de cliente en SvelteKit sobre Vercel.</p>
@@ -185,7 +182,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">IA A ESCALA</span>
-          <span class="card-org">Delta Air Lines</span>
         </div>
         <div class="card-title">Modernización de Reportes — SCRD / ESR / MPR v2</div>
         <p class="card-desc">Reemplazo "JSON-first" de tres scorecards heredados (~2.300 entidades por cierre mensual). Empaquetadores en Python sobre Teradata, rama paralela en Step Functions, caché en DynamoDB y un único visor en vanilla JS. AWS Bedrock (Claude Haiku 4.5) para narrativas automáticas y explicaciones por KPI vía <code>/api/v1/kpi-explain</code>. En el camino cerré siete defectos latentes, incluyendo una inyección por <code>eval()</code> en el motor de plantillas.</p>
@@ -201,7 +197,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">PLATAFORMA ML</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">Historian ML — Detección Industrial de Anomalías</div>
         <p class="card-desc">Plataforma de ML sobre más de 186 M de observaciones de telemetría. 8 categorías de fallos en sensores industriales. Isolation Forest para detección no supervisada de anomalías, Random Forest para clasificación de patrones y LSTM para pronóstico a nivel de sensor. Empaquetado como stack de AWS CDK con un runbook de transferencia de 580 líneas.</p>
@@ -211,7 +206,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">DEVOPS</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">CI/CD para Migración de BD Híbrida</div>
         <p class="card-desc">Pipeline de 5 etapas en Azure DevOps sobre un agente Windows autohospedado. Clasificador de riesgo SQL (BLOCKED / HIGH / MEDIUM / LOW) sobre ~30 patrones regex. Salvaguarda anti-DROP TABLE con verificación de claves foráneas. Ejecución transaccional con rollback automático. Registro de auditoría alineado con SOX.</p>
@@ -221,7 +215,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">MÓVIL</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">Field App — Inspecciones de Tanques Offline-First</div>
         <p class="card-desc">Ionic 8 + Angular 20 + Capacitor. Un solo código base → iOS, Android y PWA instalable. Offline-first sobre Dexie / IndexedDB con cola de escritura y sincronización con resolución de conflictos. AWS AppSync + DynamoDB; Cognito federado contra Azure AD vía MSAL.</p>
@@ -334,6 +327,16 @@
         </a>
       </div>
       <p>Springville · Alabama · EE. UU. Zona horaria CT, remoto desde cualquier lugar.</p>
+    </template>
+
+    <template id="t-partners">
+      <p>Organizaciones con las que he hecho trabajo:</p>
+      <div class="partners-list">
+        <span class="partner">Delta Air Lines</span>
+        <span class="partner">Diversified Gas &amp; Oil</span>
+        <span class="partner">That Simple Tech</span>
+      </div>
+      <p>El trabajo en sí — proyectos, escala, decisiones tomadas — es la mejor historia. <button class="inline-chip" data-prompt="¿Qué has lanzado?">Muéstrame lo que has lanzado</button> ↗</p>
     </template>
 
     <template id="t-private">

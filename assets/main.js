@@ -44,6 +44,12 @@
              'cómo te da tiempo', 'como te da tiempo',
              'cómo te alcanza', 'como te alcanza'],
       threadKey: null, userMsg: '¿Trabajas en varios empleos?', tpl: 't-private' },
+    { keys: [/* EN */ 'partners', 'partner', 'who have you', 'organizations',
+             'clients', 'employers', 'companies', 'worked with', 'worked for', 'where have you',
+             /* ES */ 'colaboradores', 'colaborado', 'organizaciones', 'socios',
+             'con quién', 'con quien', 'has colaborado', 'has trabajado para',
+             'has trabajado con', 'empresas con', 'dónde has', 'donde has'],
+      threadKey: 'partners', userMsg: '¿Con quién has colaborado?', tpl: 't-partners' },
     { keys: ['intro', 'who', 'about', 'yourself', 'tell me about you',
              'quién', 'quien', 'sobre ti', 'sobre vos', 'preséntate', 'presentate', 'tú eres', 'tu eres'],
       threadKey: 'intro', userMsg: '¿Quién eres?', tpl: 't-intro' },
@@ -82,8 +88,8 @@
   /* Initial suggestions */
   var initialSuggestions = [
     '¿Qué has lanzado?',
-    'Cuéntame sobre tu trabajo en Delta',
     '¿Cuál es tu stack?',
+    '¿Con quién has colaborado?',
     '¿Cómo te contacto?'
   ];
 
@@ -185,11 +191,9 @@
     // Keep suggestions fresh / varied based on context
     var pool = [
       '¿Qué has lanzado?',
-      'Cuéntame sobre tu trabajo en Delta',
       '¿Cuál es tu stack?',
+      '¿Con quién has colaborado?',
       '¿Cómo te contacto?',
-      'Diversified Gas & Oil a fondo',
-      'That Simple Tech — la consultora',
       '¿Qué es SCRD?',
       'Muéstrame los otros tres proyectos'
     ];
