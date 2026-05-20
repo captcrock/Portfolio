@@ -476,6 +476,26 @@ input { font: inherit; }
   border-top: 1px dashed var(--hairline);
 }
 
+/* partners list inside message */
+.partners-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 10px;
+}
+.partner {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  background: var(--surface);
+  border: 1px solid var(--hairline-2);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  letter-spacing: 0.01em;
+}
+
 /* stack grid inside message */
 .stack-grid {
   display: grid;

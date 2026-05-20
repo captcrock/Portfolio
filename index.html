@@ -71,8 +71,8 @@
               <span class="sb-item-title">Selected work — what have you shipped?</span>
               <span class="sb-item-time">Today</span>
             </button>
-            <button class="sb-item" data-thread="delta">
-              <span class="sb-item-title">Tell me about your Delta work</span>
+            <button class="sb-item" data-thread="partners">
+              <span class="sb-item-title">Partners I've worked with</span>
               <span class="sb-item-time">Today</span>
             </button>
             <button class="sb-item" data-thread="stack">
@@ -160,13 +160,12 @@
          Hidden response templates — pulled into chat by JS
          ========================================================= -->
     <template id="t-intro">
-      <p>Hey — I'm <strong>Adam Crocker</strong>. AI Cloud Engineer, AWS Solutions Architect — Professional (Jan 2025, valid Jan 2028). Based in <strong>Springville, Alabama</strong>; remote anywhere.</p>
-      <p>I'm a <strong>Data Engineer on Delta Air Lines' ODSR team</strong>, moving to Delta's <strong>AI Enablement team</strong> in June 2026 — that's where most of my recent work lives.</p>
-      <p>The short version of what I do: <em>I build AI-native systems for businesses of every size</em>. Fortune 500 down to mom-and-pop shops. Same person, same care.</p>
+      <p>Hey — I'm <strong>Adam Crocker</strong>. AI Cloud Engineer. <strong>AWS Solutions Architect — Professional</strong> (Jan 2025, valid Jan 2028). Based in <strong>Springville, Alabama</strong>; remote anywhere.</p>
+      <p>I build <em>AI-native systems for businesses of every size</em> — Fortune 500 down to mom-and-pop shops. Same person, same care. Most of my work sits at the intersection of <strong>LLMs &amp; agents</strong>, <strong>AWS</strong>, and <strong>production data engineering</strong> — and the integration work between them.</p>
       <div class="msg-actions">
         <button class="chip" data-prompt="What have you shipped?">▸ What have you shipped?</button>
-        <button class="chip" data-prompt="Tell me about your Delta work">▸ Tell me about your Delta work</button>
         <button class="chip" data-prompt="What's your stack?">▸ What's your stack?</button>
+        <button class="chip" data-prompt="Who have you partnered with?">▸ Partners</button>
         <button class="chip" data-prompt="How do I reach you?">▸ How do I reach you?</button>
       </div>
     </template>
@@ -177,7 +176,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">DATA PLATFORM</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">Corporate Historian — OT Data Platform</div>
         <p class="card-desc">Lead engineer on the central operational data warehouse. TimescaleDB with 15 schemas, 77 tables, 114 PL/pgSQL functions, 1.6M+ daily production records. Star schema, hypertables, continuous aggregates. ETL from CygNet SCADA, Snowflake, MNR; outbound to Grafana and regulatory reporting. Embedded pgai for automated issue detection over operator free-text and semantic search across historical observations.</p>
@@ -187,7 +185,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">AI SYSTEMS</span>
-          <span class="card-org">That Simple Tech</span>
         </div>
         <div class="card-title">Autonomous AI Agency Platform</div>
         <p class="card-desc">10-agent system handling the full client lifecycle — intake, sales, scoping, build, QA, deploy, support, billing, comms, phone — across 8 project types. MiniMax M2.7 primary; Gemini 3 Flash Preview for visual QA. Voice via Pipecat + Telnyx + Deepgram Nova; agents execute inside Cua sandboxes. SvelteKit client portal on Vercel.</p>
@@ -197,7 +194,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">AI AT SCALE</span>
-          <span class="card-org">Delta Air Lines</span>
         </div>
         <div class="card-title">Reporting Modernization — SCRD / ESR / MPR v2</div>
         <p class="card-desc">JSON-first replacement for three legacy scorecards (~2,300 entities/closeout). Python packagers on Teradata, Step Functions parallel branch, DynamoDB caching, single vanilla-JS viewer. AWS Bedrock (Claude Haiku 4.5) for auto-narratives + per-KPI explanations via <code>/api/v1/kpi-explain</code>. Closed seven latent defects en route, including an <code>eval()</code>-based templating injection.</p>
@@ -213,7 +209,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">ML PLATFORM</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">Historian ML — Industrial Anomaly Detection</div>
         <p class="card-desc">ML platform over 186M+ telemetry observations. 8 categories of industrial sensor failure. Isolation Forest for unsupervised anomaly detection, Random Forest for pattern classification, LSTM for sensor-level forecasting. Packaged as an AWS CDK stack with a 580-line handoff runbook.</p>
@@ -223,7 +218,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">DEVOPS</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">Hybrid DB Migration CI/CD</div>
         <p class="card-desc">5-stage Azure DevOps pipeline on a self-hosted Windows agent. SQL risk classifier (BLOCKED / HIGH / MEDIUM / LOW) over ~30 regex patterns. DROP TABLE foreign-key safeguard. Transactional execution with auto-rollback. SOX-aligned audit logging.</p>
@@ -233,7 +227,6 @@
       <div class="card">
         <div class="card-head">
           <span class="card-tag">MOBILE</span>
-          <span class="card-org">Diversified Gas &amp; Oil</span>
         </div>
         <div class="card-title">Field App — Offline-First Tank Inspections</div>
         <p class="card-desc">Ionic 8 + Angular 20 + Capacitor. Single codebase → iOS, Android, installable PWA. Offline-first on Dexie / IndexedDB with a write-queue and conflict-resolving sync. AWS AppSync + DynamoDB; Cognito federated to Azure AD via MSAL.</p>
@@ -346,6 +339,16 @@
         </a>
       </div>
       <p>Springville · Alabama · US. CT time zone, remote anywhere.</p>
+    </template>
+
+    <template id="t-partners">
+      <p>Organizations I've done work with or for:</p>
+      <div class="partners-list">
+        <span class="partner">Delta Air Lines</span>
+        <span class="partner">Diversified Gas &amp; Oil</span>
+        <span class="partner">That Simple Tech</span>
+      </div>
+      <p>The work itself — projects, scale, decisions made — is the better story. <button class="inline-chip" data-prompt="What have you shipped?">Show me what you've shipped</button> ↗</p>
     </template>
 
     <template id="t-private">

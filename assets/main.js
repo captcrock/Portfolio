@@ -29,6 +29,9 @@
              'diversified and delta', 'dgo and delta', 'tst and delta',
              'work for both', 'work for all', 'work all three', 'work at both'],
       threadKey: null, userMsg: 'Do you work multiple jobs?', tpl: 't-private' },
+    { keys: ['partners', 'partner', 'who have you', 'organizations', 'clients',
+             'employers', 'companies', 'worked with', 'worked for', 'where have you'],
+      threadKey: 'partners', userMsg: "Who have you partnered with?", tpl: 't-partners' },
     { keys: ['intro', 'who', 'about', 'yourself', 'tell me about you'],
       threadKey: 'intro', userMsg: 'Who are you?', tpl: 't-intro' },
     { keys: ['ship', 'shipped', 'built', 'projects', 'portfolio', 'selected work', 'work'],
@@ -57,8 +60,8 @@
   /* Initial suggestions */
   var initialSuggestions = [
     'What have you shipped?',
-    'Tell me about your Delta work',
     "What's your stack?",
+    "Who have you partnered with?",
     'How do I reach you?'
   ];
 
@@ -160,11 +163,9 @@
     // Keep suggestions fresh / varied based on context
     var pool = [
       'What have you shipped?',
-      'Tell me about your Delta work',
       "What's your stack?",
+      "Who have you partnered with?",
       'How do I reach you?',
-      'Diversified Gas & Oil deep-dive',
-      'That Simple Tech — the agency thing',
       'What is SCRD?',
       'Show me the other three projects'
     ];
