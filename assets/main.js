@@ -17,7 +17,7 @@
   /* --- Prompt → response template map --- */
   var routes = [
     /* Polite deflection for questions about working multiple jobs / employment overlap.
-       Must come first so its keywords beat 'delta', 'dgo', 'tst', etc. */
+       Must come first so its keywords beat 'delta', 'tst', etc. */
     { keys: ['two jobs', '2 jobs', 'three jobs', '3 jobs', 'multiple jobs',
              'both jobs', 'both employers', 'both companies',
              'two roles', 'three roles', 'multiple roles', 'three positions',
@@ -25,8 +25,7 @@
              'moonlight', 'side gig', 'second job',
              'at the same time', 'simultaneously', 'work both', 'balance both',
              'juggle', 'how do you have time', "how do you find time",
-             'delta and diversified', 'delta and dgo', 'delta and tst',
-             'diversified and delta', 'dgo and delta', 'tst and delta',
+             'delta and tst', 'tst and delta',
              'work for both', 'work for all', 'work all three', 'work at both'],
       threadKey: null, userMsg: 'Do you work multiple jobs?', tpl: 't-private' },
     { keys: ['partners', 'partner', 'who have you', 'organizations', 'clients',
@@ -36,16 +35,12 @@
       threadKey: 'intro', userMsg: 'Who are you?', tpl: 't-intro' },
     { keys: ['ship', 'shipped', 'built', 'projects', 'portfolio', 'selected work', 'work'],
       threadKey: 'work', userMsg: 'What have you shipped?', tpl: 't-work' },
-    { keys: ['other three', 'more projects', 'rest of', 'remaining'],
-      threadKey: null, userMsg: 'Show me the other three projects', tpl: 't-work-more' },
     { keys: ['delta', 'odsr', 'airlines', 'enablement'],
       threadKey: 'delta', userMsg: 'Tell me about your Delta work', tpl: 't-delta' },
     { keys: ['scrd', 'scorecard'],
       threadKey: null, userMsg: 'What is SCRD?', tpl: 't-scrd' },
     { keys: ['eval', 'injection', 'defect', 'bug'],
       threadKey: null, userMsg: 'Tell me about the eval() injection', tpl: 't-eval' },
-    { keys: ['dgo', 'diversified', 'gas', 'oil', 'historian', 'timescale', 'industrial'],
-      threadKey: 'dgo', userMsg: 'Diversified Gas & Oil deep-dive', tpl: 't-dgo' },
     { keys: ['tst', 'that simple tech', 'agency', 'agent', 'consultancy'],
       threadKey: 'tst', userMsg: 'That Simple Tech — the agency thing', tpl: 't-tst' },
     { keys: ['stack', 'tech', 'tools', 'capabilities', 'languages', 'aws', 'work with'],
@@ -166,8 +161,7 @@
       "What's your stack?",
       "Who have you partnered with?",
       'How do I reach you?',
-      'What is SCRD?',
-      'Show me the other three projects'
+      'What is SCRD?'
     ];
     var lower = lastPrompt.toLowerCase();
     return pool.filter(function (p) {
